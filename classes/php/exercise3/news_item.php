@@ -22,7 +22,8 @@
 		</div>
 		<div id="content">
 			<?php
-				$db = new PDO('sqlite:news.db');
+				include_once('database/connection.php');
+				global $db;
 				$stmt = $db->prepare('SELECT * FROM news WHERE id = ?');
 				$stmt->execute(array($_GET['id']));
 				$result = $stmt->fetch();
@@ -31,11 +32,21 @@
 				<h3><?php echo $result['title'] ?></h3>
 				<img src="http://ipsumimage.appspot.com/300x200,ff7700" alt="300x200">
 				<p class="introduction"><?php echo $result['introduction'] ?></p>
-				<ul>
-					<li><a href="noticia1.html">see more</a></li>
-					<li><a href="comentarios1.html">comments (2)</a></li>
-					<li><a href="partilhar1.html">share</a></li>
-				</ul>
+			</div>
+			<div id="comments">
+				<h3>Comments</h3><br>
+				<?php
+				$db = new PDO('sqlite:news.db');
+				
+				$stmt = $db->prepare('SELECT * FROM comments WHERE news_id = ?');
+				$stmt->execute(array($_GET['id']));  
+				$result = $stmt->fetchAll();
+				
+				foreach( $result as $row) {
+				?>
+				<h2><?php echo $row['author'] ?></h3>
+				<p><?php echo $row['text'] ?></p><br>
+				<?php } ?>
 			</div>
 		</div>
 		<div id="footer">

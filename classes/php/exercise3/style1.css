@@ -67,6 +67,14 @@ ul {
 	padding-top: 8px;
 }
 
+#comments {
+	line-height: 20px;
+	font-size: 14px;
+	border-bottom:1px solid #313030;
+	padding-bottom: 8px;
+	padding-top: 8px;
+}
+
 .news-item img {
 	float: left;
 	margin-right: 10px;
