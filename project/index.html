@@ -7,9 +7,22 @@
 	<meta name="keywords" content="" />
 
 	<link rel="icon" href="images/favicon.png" type="image/png" />
+
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<br><center><h1>HELLO</h1><br><br>
-	<h1>IS IT ME YOU'RE LOOKING FOR?</h1></center>
+	<div class="login-sitename">going.</div> 
+	<form class="login-form" action="database/login.php" method="post">
+		<input class="login-form-username" id="username" type="text" required="required" placeholder="username"><br>
+		<input class="login-form-password" id="password" type="password" required="required" placeholder="password"><br>
+		<div id="login-failed"> Username or password incorrect.</div>
+		<input id="login-button" type="submit" value="Login">
+	</form><br>
+
+	<div id="register">Don't have an account? <a href="index.html">Register here.</a></div>
+
+	<!-- LOAD SCRIPTS -->
+	<script type="text/javascript" src="scripts/script.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 </body>
 </html>

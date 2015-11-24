@@ -1,0 +1,124 @@
+html, body {
+	height: 100%;
+	font-family: 'Lato', sans-serif;
+	background-image: url("../images/background.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-position: center;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@font-face {
+  font-family: 'Rabbid Highway Sign II';
+  src: url('../RabbidHighwaySignII.otf');
+}
+
+.login-sitename {
+	padding-bottom: 15px;
+	text-align: center;
+	color: white;
+	font-size: 75px;
+	letter-spacing: 2px;
+	font-family: 'Rabbid Highway Sign II';
+}
+
+.login-form {
+	height: auto;
+	text-align: center;
+}
+
+#login-button {
+	width: 100%;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	background: rgb(224,224,224);
+	background: -moz-linear-gradient(top,  rgba(224,224,224,1) 0%, rgba(206,206,206,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(100%,rgba(206,206,206,1)));
+	background: -webkit-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	background: -o-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	background: linear-gradient(to bottom,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#cecece',GradientType=0 );
+	display: block;
+	border: none;
+	border-radius: 3px;
+	padding: 8px;
+	font-size: 17px;
+	color: #636363;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+	font-weight: 700;
+	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.17), 0 1px 0 rgba(255, 255, 255, 0.36) inset;
+	cursor: pointer;
+	transition: width 2s, height 4s; 
+}
+
+.login-form-username, .login-form-password {
+	height: 40px;
+	width: 280px;
+	padding-left: 7px;
+	border-width: thin;
+	font-size: 15px;
+	font-weight: 400;
+	font-family: 'Lato', sans-serif;
+	border: solid 1px #F6F6F6;
+}
+
+.login-form-username {
+	border-bottom: none;
+	border-radius: 4px 4px 0 0;
+	-moz-border-radius: 4px 4px 0 0;
+	-webkit-border-radius: 4px 4px 0 0;
+	box-shadow: 0 -1px 0 #E0E0E0 inset, 0 0px 1px rgba(0, 0, 0, 0.23) inset;
+}
+
+.login-form-password {
+	border-top: none;
+	border-radius: 0 0 4px 4px;
+	-moz-border-radius: 0 0 4px 4px;
+	-webkit-border-radius: 0 0 4px 4px;
+	box-shadow: 0 -1px 0 #E0E0E0 inset, 0 0px 1px rgba(0, 0, 0, 0.23) inset;
+	/*box-shadow: 0 -1px -1px rgba(0, 0, 0, 0.23) inset, 0 1px 1px rgba(255, 255, 255, 0.1);*/
+}
+
+#login-failed {
+	visibility: hidden;
+	height: 0px;
+	width: 270px;
+	padding-top: 8px;
+	padding-bottom: 6px;
+	color: white;
+	margin: 0px;
+	border-radius: 4px;
+	background-color: rgba(0, 0, 0, 0.5);
+	font-size: 14px;
+	text-align: center;
+}
+
+#register {
+	color: white;
+	text-align: center;
+	/*text-shadow:
+   -0.5px -0.5px 0 #000,  
+    0.5px -0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px 0.5px 0 #000;*/
+}
+
+#register a{
+	color: white;
+	text-decoration: none;
+}
+
+#register a:hover{
+	color: white;
+	text-decoration: underline;
+}
