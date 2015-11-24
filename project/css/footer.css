@@ -1,0 +1,9 @@
+footer {
+	position: absolute;
+	bottom:0px;
+	height: 60px;
+	color: white;
+	font-family: 'Lato', sans-serif;
+	left: 50%;
+    transform: translate(-50%, 0);
+}
