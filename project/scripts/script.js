@@ -1,3 +1,12 @@
+window.onload = function() {
+	$(document).ready(function() {
+    	$('.login-sitename, .login-form, #register').fadeIn(500);
+    	$('html, body').animate({
+    		height: '100%'
+    	});
+	});
+};
+
 document.getElementById("login-button").onclick = function() {
 	var username = document.getElementById("username");
 	var password = document.getElementById("password");
@@ -20,7 +29,6 @@ document.getElementById("login-button").onclick = function() {
 			elm.style.visibility = 'visible';
 			elm.style.height = '20px';
 			elm.style.margin = '10px';
-			$('#login-failed').fadeIn(3000);
 		}
 		else {
 			elm.style.visibility = 'hidden';

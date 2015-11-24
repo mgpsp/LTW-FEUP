@@ -1,5 +1,5 @@
 html, body {
-	height: 100%;
+	height: 110%;
 	font-family: 'Lato', sans-serif;
 	background-image: url("../images/background.png");
 	background-repeat: no-repeat;
@@ -29,11 +29,13 @@ body {
 	font-size: 75px;
 	letter-spacing: 2px;
 	font-family: 'Rabbid Highway Sign II';
+	display: none;
 }
 
 .login-form {
 	height: auto;
 	text-align: center;
+	display: none;
 }
 
 #login-button {
@@ -113,6 +115,7 @@ body {
 #register {
 	color: white;
 	text-align: center;
+	display: none;
 	/*text-shadow:
    -0.5px -0.5px 0 #000,  
     0.5px -0.5px 0 #000,
