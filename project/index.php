@@ -7,6 +7,9 @@
 		case 'signIn':
 			include('templates/signin.php');
 			break;
+		case 'signUp':
+			include('templates/signup.php');
+			break;
 		default:
 			include('templates/signin.php');
 			break;

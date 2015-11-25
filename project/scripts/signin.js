@@ -1,6 +1,6 @@
 window.onload = function() {
 	$(document).ready(function() {
-    	$('.login-sitename, .login-form, #register').fadeIn(500);
+    	$('.sitename, .sign-form, #register').fadeIn(500);
     	$('html, body').animate({
     		height: '100%'
     	});
@@ -11,10 +11,26 @@ document.getElementById("login-button").onclick = function() {
 	var username = document.getElementById("username");
 	var password = document.getElementById("password");
 
+	var flag = 0;
 	if (username.value == '') {
-		username.style.backgroundColor = 'rgba(200, 0, 0, 1)';
+		flag = 1;
 		username.style.borderColor = 'red';
 	}
+	else
+		username.style.borderColor = '#F6F6F6';
+
+	if (password.value == '') {
+		if (flag != 1)
+			password.style.borderTop = '1px solid';
+
+		flag = 1;
+		password.style.borderColor = 'red';
+	}
+	else
+		password.style.borderColor = '#F6F6F6';
+
+	if (flag == 1)
+		return false;
 
 	var formData = {
 		"username" : username.value,
@@ -26,14 +42,16 @@ document.getElementById("login-button").onclick = function() {
 	login.done(function(data)  {
 		var elm = document.getElementById("login-failed");
 		if (data == "false") {
-			elm.style.visibility = 'visible';
 			elm.style.height = '20px';
 			elm.style.margin = '10px';
+			$('#login-failed').fadeIn(300);
 		}
 		else {
-			elm.style.visibility = 'hidden';
+			elm.style.display = 'none';
 			elm.style.height = '0px';
 			elm.style.margin = '0px';
+			
+			document.getElementById("login-form").submit();
 		}
 	});
 

@@ -22,7 +22,7 @@ body {
   src: url('../fonts/RabbidHighwaySignII.otf');
 }
 
-.login-sitename {
+.sitename {
 	padding-bottom: 15px;
 	text-align: center;
 	color: white;
@@ -32,13 +32,18 @@ body {
 	display: none;
 }
 
-.login-form {
+.sitename a {
+	color: white;
+	text-decoration: none;
+}
+
+.sign-form {
 	height: auto;
 	text-align: center;
 	display: none;
 }
 
-#login-button {
+#login-button, #register-button {
 	width: 100%;
 	font-family: 'Lato', sans-serif;
 	background: rgb(224, 224, 224);
@@ -50,6 +55,7 @@ body {
 	background: linear-gradient(to bottom,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0e0e0', endColorstr='#cecece',GradientType=0 );
 	display: block;
+	margin-top: 12px;
 	border: none;
 	border-radius: 3px;
 	padding: 8px;
@@ -61,7 +67,7 @@ body {
 	cursor: pointer;
 }
 
-#login-button:hover {
+#login-button:hover, #register-button:hover {
 	background: rgb(216, 216, 216);
 	background: -moz-linear-gradient(top,  rgba(216, 216, 216, 1) 0%, rgba(198, 198, 198, 1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(216, 216, 216, 1)), color-stop(100%,rgba(198, 198, 198, 1)));
@@ -71,7 +77,7 @@ body {
 	background: linear-gradient(to bottom,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
 }
 
-.login-form-username, .login-form-password {
+.username-field, .password-field, .email-field {
 	height: 40px;
 	width: 280px;
 	padding-left: 7px;
@@ -82,7 +88,7 @@ body {
 	border: solid 1px #F6F6F6;
 }
 
-.login-form-username {
+.username-field {
 	/*border-bottom: none;*/
 	border-radius: 4px 4px 0 0;
 	-moz-border-radius: 4px 4px 0 0;
@@ -90,7 +96,7 @@ body {
 	/*box-shadow: 0 -1px 0 #E0E0E0 inset, 0 0px 1px rgba(0, 0, 0, 0.23) inset;*/
 }
 
-.login-form-password {
+.password-field {
 	border-top: none;
 	border-radius: 0 0 4px 4px;
 	-moz-border-radius: 0 0 4px 4px;
@@ -98,14 +104,18 @@ body {
 	/*box-shadow: 0 -1px 0 #E0E0E0 inset, 0 0px 1px rgba(0, 0, 0, 0.23) inset;*/
 }
 
-#login-failed {
-	visibility: hidden;
-	height: 0px;
+.email-field {
+	border-top: none;
+}
+
+#login-failed, #register-failed {
+	display: none;
+	height: 20px;
 	width: 270px;
 	padding-top: 8px;
 	padding-bottom: 6px;
 	color: white;
-	margin: 0px;
+	margin: 10px;
 	border-radius: 4px;
 	background-color: rgba(0, 0, 0, 0.5);
 	font-size: 14px;

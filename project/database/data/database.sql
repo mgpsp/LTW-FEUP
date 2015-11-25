@@ -36,13 +36,13 @@ CREATE TABLE Comments (
 
 -- TESTING INFORMATION
 
-INSERT INTO Users VALUES (NULL, 'John Doe', '12345', 'johndoe@gmail.com', NULL);
-INSERT INTO Users VALUES (NULL, 'Jane Doe', '12345', 'janedoe@gmail.com', NULL);
-INSERT INTO Users VALUES (NULL, 'Phil Doe', '12345', 'phildoe@gmail.com', NULL);
+INSERT INTO Users VALUES (NULL, 'martalopes', '12345', 'marta@gmail.com', NULL);
+INSERT INTO Users VALUES (NULL, 'miguelpereira', '12345', 'miguel@gmail.com', NULL);
+INSERT INTO Users VALUES (NULL, 'franciscorodrigues', '12345', 'chico@gmail.com', NULL);
 
-INSERT INTO Events VALUES (NULL, 'John Doe', "../images/eventBanner.png", "Event 1", "2015-12-25 09:30", "Event 1", "party");
-INSERT INTO Events VALUES (NULL, 'Jane Doe', "../images/eventBanner.png", "Event 2", "2015-11-20 10:30", "Event 2", "party");
+INSERT INTO Events VALUES (NULL, 'martalopes', "../images/eventBanner.png", "Event 1", "2015-12-25 09:30", "Event 1", "party");
+INSERT INTO Events VALUES (NULL, 'franciscorodrigues', "../images/eventBanner.png", "Event 2", "2015-11-20 10:30", "Event 2", "party");
 
-INSERT INTO Comments VALUES (NULL, "bla bla bla", 1, "John Doe");
-INSERT INTO Comments VALUES (NULL, "ble ble ble", 1, "Jane Doe");
-INSERT INTO Comments VALUES (NULL, "bli bli bli", 2, "Phil Doe");
+INSERT INTO Comments VALUES (NULL, "bla bla bla", 1, "martalopes");
+INSERT INTO Comments VALUES (NULL, "ble ble ble", 1, "miguelpereira");
+INSERT INTO Comments VALUES (NULL, "bli bli bli", 2, "franciscorodrigues");
