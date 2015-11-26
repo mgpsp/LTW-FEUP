@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include_once('connection.php');
 	global $db;
 	
@@ -7,8 +8,12 @@
 	$stmt = $db->prepare('SELECT * FROM Users WHERE username = ? AND password = ?');
 	$stmt->execute(array($username, $password));
 
-	if (!($result = $stmt->fetch()))
+	if (!($result = $stmt->fetch())) {
+		$_SESSION['username'] = null;
 		echo "false";
-	else
+	}
+	else {
+		$_SESSION['username'] = $username;
 		echo "true";
+	}
 ?>

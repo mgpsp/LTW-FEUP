@@ -1,6 +1,6 @@
-	<footer>
+	<!--<footer>
 		<p>going. © 2015</p>
-	</footer>
+	</footer>-->
 
 	<!-- LOAD SCRIPTS -->
 	<script type="text/javascript" src="scripts/signin.js"></script>

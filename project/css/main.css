@@ -1,0 +1,94 @@
+html, body {
+	/*font-family: 'Lato', sans-serif;*/
+	font-family: 'Montserrat', sans-serif;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#header {
+	position: absolute;
+ 	top: 0px;
+ 	left: 0px;
+ 	width: 100%;
+	/*background: rgb(216, 216, 216);
+	background: -moz-linear-gradient(top,  rgba(216, 216, 216, 1) 0%, rgba(198, 198, 198, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(216, 216, 216, 1)), color-stop(100%,rgba(198, 198, 198, 1)));
+	background: -webkit-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+	background: -o-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+	background: -ms-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+	background: linear-gradient(to bottom,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);*/
+	background-color: #F5F5F5;
+	box-shadow: 1px 0px 3px #888888;
+	min-height: 5%;
+	max-height: 6%;
+}
+
+#logout-button {
+	margin-top: 17px;
+	float: right;
+	position: relative;
+	right: 20%;
+	max-height: 6%;
+}
+
+#logout-button:hover {
+	content: url('../images/logoutHover.png');
+}
+
+#username {
+	position: relative;
+	float: right;
+	right: 20%;
+	color: #333333;
+	margin-top: 15.5px;
+	margin-right: 7px;
+	text-decoration: none;
+	color: #333333;
+	font-weight: bold;
+	max-height: 6%;
+}
+
+#username:hover {
+	color: #FF9800;
+}
+
+#site-logo {
+	margin: 10px;
+	float: left;
+	position: relative;
+	left: 20%;
+	max-height: 6%;
+}
+
+#site-logo:hover {
+	content: url('../images/logoHover.png');
+}
+
+#search-bar {
+	float: left;
+	position: relative;
+	left: 20%;
+	top: 9.4px;
+	max-height: 6%;
+}
+
+#search-box {
+	height: 27px;
+	width: 330px;
+	top: 50%;
+	padding-left: 9px;
+	border-width: thin;
+	font-size: 15px;
+	font-weight: 400;
+	font-family: 'Lato', sans-serif;
+	border: solid 1px #E3E3E3;
+	border-radius: 3px;
+	background-image: url("../images/mglass1.png");
+	background-size: 15px 15px;
+	background-position: left center;
+	background-position: 7px;
+    background-repeat: no-repeat;
+    text-indent: 20px;
+}

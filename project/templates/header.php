@@ -7,5 +7,5 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 
-	<link rel="icon" href="images/favicon.png" type="image/png" />
+	<link rel="icon" href="images/logo.png" type="image/png" />
 	<link rel="stylesheet" href="css/footer.css">
