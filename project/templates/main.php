@@ -9,5 +9,8 @@
 		</form>
 		<a href="../database/logout.php"><img id="logout-button" src="../images/logout.png" alt="Logout" height="16" width="16"></a>
 		<a id="username" href=""><?= $_SESSION['username'] ?></a>
-  </div>
-	</div>
+  	</div>
+
+  	<div id="add-event">
+  		<a id="add-event-button" href="">Add event</a>
+  	</div>

@@ -3,26 +3,21 @@ html, body {
 	font-family: 'Montserrat', sans-serif;
 	height: 100%;
 	width: 100%;
-	margin: 0;
+	min-width: 850px;
+	margin: auto;
 	padding: 0;
 }
 
 #header {
-	position: absolute;
+	position: relative;
  	top: 0px;
  	left: 0px;
  	width: 100%;
-	/*background: rgb(216, 216, 216);
-	background: -moz-linear-gradient(top,  rgba(216, 216, 216, 1) 0%, rgba(198, 198, 198, 1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(216, 216, 216, 1)), color-stop(100%,rgba(198, 198, 198, 1)));
-	background: -webkit-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
-	background: -o-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
-	background: -ms-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
-	background: linear-gradient(to bottom,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);*/
 	background-color: #F5F5F5;
 	box-shadow: 1px 0px 3px #888888;
-	min-height: 5%;
-	max-height: 6%;
+	height: 49px;
+	overflow: hidden;
+	z-index: 0;
 }
 
 #logout-button {
@@ -30,7 +25,7 @@ html, body {
 	float: right;
 	position: relative;
 	right: 20%;
-	max-height: 6%;
+	z-index: 1;
 }
 
 #logout-button:hover {
@@ -47,7 +42,7 @@ html, body {
 	text-decoration: none;
 	color: #333333;
 	font-weight: bold;
-	max-height: 6%;
+	z-index: 1;
 }
 
 #username:hover {
@@ -55,11 +50,11 @@ html, body {
 }
 
 #site-logo {
-	margin: 10px;
+	margin-top: 9px;
+	margin-right: 9px;
 	float: left;
 	position: relative;
 	left: 20%;
-	max-height: 6%;
 }
 
 #site-logo:hover {
@@ -71,7 +66,7 @@ html, body {
 	position: relative;
 	left: 20%;
 	top: 9.4px;
-	max-height: 6%;
+	z-index: 2;
 }
 
 #search-box {
@@ -91,4 +86,22 @@ html, body {
 	background-position: 7px;
     background-repeat: no-repeat;
     text-indent: 20px;
+}
+
+#add-event {
+	position: relative;
+	width: 60%;
+	height: 100px;
+	top: 6%;
+	left: 20%;
+	background-color: #FAFAFA;
+	/*border: solid 1px #efefef;*/
+	box-shadow: 0px 0px 1px #888888;
+	text-align: center;
+	display: table;
+}
+
+#add-event-button {
+	display: table-cell;
+   	vertical-align: middle;
 }
