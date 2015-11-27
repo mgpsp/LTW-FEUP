@@ -9,3 +9,6 @@
 		<div id="register-failed">Username or email already exist.</div>
 		<input id="register-button" type="submit" value="Register">
 	</form>
+
+	<script type="text/javascript" src="scripts/signup.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

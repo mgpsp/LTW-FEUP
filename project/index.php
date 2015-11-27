@@ -2,6 +2,9 @@
 	session_start();
 	include('templates/header.php');
 
+	if (!isset($_SESSION['username']))
+		$_SESSION['username'] = null;
+
 	$redirectTo = isset($_GET['page']) ? $_GET['page'] : 'signIn';
 
 	$loginRequired = array('main');

@@ -12,5 +12,8 @@
   	</div>
 
   	<div id="add-event">
-  		<a id="add-event-button" href="">Add event</a>
+  		<div id="add-event-button">Add event</div>
   	</div>
+
+  	<script type="text/javascript" src="scripts/addevent.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

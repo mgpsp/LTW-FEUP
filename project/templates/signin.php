@@ -10,3 +10,6 @@
 	</form><br>
 
 	<div id="register">Don't have an account? <a href="index.php?page=signUp">Register here.</a></div>
+
+	<script type="text/javascript" src="scripts/signin.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
