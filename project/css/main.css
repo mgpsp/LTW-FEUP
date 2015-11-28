@@ -99,7 +99,6 @@ html, body {
 	left: 25%;
 	margin-top: 15px;
 	background-color: #FAFAFA;
-	/*border: solid 1px #efefef;*/
 	box-shadow: 0px 0px 1px #888888;
 	text-align: center;
 	display: table;
@@ -117,4 +116,101 @@ html, body {
 
 #add-event:hover {
 	background-color: #F2F2F2;
+}
+
+#dim {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+    z-index: 100;
+}
+
+#add-event-form {
+	position: relative;
+  	margin-left: auto;
+  	margin-right: auto;
+	margin-top: 13px;
+	width: 28%;
+	height: 350px;
+	box-shadow: 0px 0px 1px #888888;
+	display: none;
+	z-index: 101;
+	background-color: white;
+}
+
+#field-name {
+	position: relative;
+	float: left;
+	left: 4%;
+	font-size: 14.5px;
+	top: 3%;
+}
+
+#data-field {
+	position: relative;
+	float: right;
+	right: 8%;
+}
+
+#field-name ul, #data-field ul{
+	list-style-type: none;
+}
+
+#field-name li {
+	text-align: right;
+	padding-bottom: 23px;
+	padding-right: 7px;
+}
+
+#field-name li:last-child {
+	padding-top: 42px;
+}
+
+#data-field li:not(:last-child) {
+	text-align: left;
+	padding-bottom: 7px;
+}
+
+#name, #location, #date, #time, #description, #type {
+	padding-left: 7px;
+}
+
+#name, #location, #type {
+	height: 27px;
+	width: 330px;
+}
+
+#date {
+	height: 27px;
+	margin-right: 6px;
+}
+
+#time {
+	height: 27px;
+}
+
+#description {
+	width: 330px;
+	height: 70px;
+	padding-top: 7px;
+	resize: none;
+	font-family: 'Benton Sans';
+}
+
+#create-button {
+	position: relative;
+	float: right;
+	height: 30px;
+	width: 80px;
+	border: none;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+#create-button:hover {
+	background-color: #F6F6F6;
 }
