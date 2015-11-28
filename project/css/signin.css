@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'Benton Sans';
-  src: url('../fonts/BentonSans-Regular.otf');
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-Regular.otf');
 }
 
 html, body {
 	height: 110%;
-	font-family: 'Benton Sans';
-	background-image: url("../images/background.png");
+	font-family: 'Proxima Nova';
+	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
     background-position: center;
@@ -52,7 +52,7 @@ body {
 
 #login-button, #register-button {
 	width: 100%;
-	font-family: 'Benton Sans';
+	font-family: 'Proxima Nova';
 	background: rgb(224, 224, 224);
 	background: -moz-linear-gradient(top,  rgba(224,224,224,1) 0%, rgba(206,206,206,1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(100%,rgba(206,206,206,1)));
@@ -91,7 +91,7 @@ body {
 	border-width: thin;
 	font-size: 15px;
 	font-weight: 400;
-	font-family: 'Benton Sans';
+	font-family: 'Proxima Nova';
 	border: solid 1px #F6F6F6;
 }
 
@@ -130,11 +130,6 @@ body {
 	color: white;
 	text-align: center;
 	display: none;
-	/*text-shadow:
-   -0.5px -0.5px 0 #000,  
-    0.5px -0.5px 0 #000,
-    -0.5px 0.5px 0 #000,
-    0.5px 0.5px 0 #000;*/
 }
 
 #register a{

@@ -5,14 +5,19 @@
 	$name = $_POST["name"];
 	$location = $_POST["location"];
 	$type = $_POST["type"];
-	$datetime = $_POST["datetime"];
+	$eventDate = $_POST["datetime"];
 	$description = $_POST["description"];
 	$host = $_SESSION['username'];
 
-	$target_dir = "../images/";
-	$target_file = $target_dir . basename($_FILES["photo"]);
+	$uploads_dir = "../images/uploads";
+	if ($_FILES["photo"]["name"] === null)
+		$image_name = "eventBanner.png";
+	else
+		$image_name = uniqid() . "-" . $_FILES["photo"]["name"];
+	$tmp_name = $_FILES["photo"]["tmp_name"];
+    move_uploaded_file($tmp_name, "$uploads_dir/$image_name");
 
 	$stmt = $db->prepare('INSERT INTO Events (host, banner, name, eventDate, location, description, type) VALUES (?, ?, ?, ?, ?, ?, ?)');
-	$stmt->execute(array($host, $target_file, $name, $eventDate, $location, $description, $type));
-	header('Location: ../index.php?page=main');
+	$stmt->execute(array($host, "$uploads_dir/$image_name", $name, $eventDate, $location, $description, $type));
+	echo "true";
 ?>

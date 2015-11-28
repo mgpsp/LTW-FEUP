@@ -1,16 +1,22 @@
 @font-face {
-  font-family: 'Benton Sans';
-  src: url('../fonts/BentonSans-Regular.otf');
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('../fonts/ProximaNova-Light.otf');
 }
 
 html, body {
-	/*font-family: 'Lato', sans-serif;*/
-	font-family: 'Benton Sans';
+	font-family: 'Proxima Nova';
 	height: 100%;
 	width: 100%;
-	min-width: 1000px;
+	min-width: 1200px;
 	margin: auto;
 	padding: 0;
+	background-color: #121314;
+	display: none;
 }
 
 #header {
@@ -18,58 +24,80 @@ html, body {
  	top: 0px;
  	left: 0px;
  	width: 100%;
-	background-color: #F5F5F5;
-	box-shadow: 1px 0px 3px #888888;
-	height: 49px;
+	background-color: #1C1C1F;
+	height: 65px;
 	overflow: hidden;
 	z-index: 0;
 }
 
 #logout-button {
-	margin-top: 17px;
+	margin-top: 24.5px;
 	float: right;
 	position: relative;
-	right: 25%;
+	right: 23%;
 	z-index: 1;
+	color: #88898C;
+	text-decoration: none;
+	font-size: 17px;
 }
 
 #logout-button:hover {
-	content: url('../images/logoutHover.png');
+	-webkit-filter: brightness(160%);
+	filter: brightness(160%);
+}
+
+#add-event-button {
+	margin-top: 25.5px;
+	margin-right: 14px;
+	float: right;
+	position: relative;
+	right: 23%;
+	z-index: 1;
+	color: #88898C;
+	text-decoration: none;
+	font-size: 16.5px;
+	cursor: pointer;
+	word-spacing: 2.5px;
+}
+
+#add-event-button:hover {
+	-webkit-filter: brightness(160%);
+	filter: brightness(160%);
 }
 
 #username {
 	position: relative;
 	float: right;
-	right: 25%;
-	color: #333333;
-	margin-top: 15.5px;
-	margin-right: 7px;
+	right: 23%;
+	color: #88898C;
+	margin-top: 23.5px;
+	margin-right: 14px;
 	text-decoration: none;
-	font-weight: bold;
 	z-index: 1;
+	font-size: 16.5px;
+	word-spacing: 2.5px;
+
 }
 
 #username:hover {
-	color: #595959;
+	-webkit-filter: brightness(160%);
+	filter: brightness(160%);
 }
 
 #site-logo {
-	margin-top: 9px;
+	margin-top: 15px;
 	margin-right: 9px;
 	float: left;
 	position: relative;
-	left: 25%;
-}
-
-#site-logo:hover {
-	content: url('../images/logoHover.png');
+	left: 23%;
 }
 
 #search-bar {
 	float: left;
 	position: relative;
-	left: 25%;
-	top: 9.4px;
+	left: 23%;
+	margin-top: 17px;
+	margin-left: 2px;
 	z-index: 2;
 }
 
@@ -81,37 +109,15 @@ html, body {
 	border-width: thin;
 	font-size: 15px;
 	font-weight: 400;
-	font-family: 'Benton Sans';
+	font-family: 'Proxima Nova';
 	border: solid 1px #E3E3E3;
 	border-radius: 3px;
-	background-image: url("../images/mglass1.png");
+	background-image: url("../images/mglass.png");
 	background-size: 15px 15px;
 	background-position: left center;
 	background-position: 7px;
     background-repeat: no-repeat;
     text-indent: 20px;
-}
-
-#add-event {
-	position: relative;
-	width: 50%;
-	height: 100px;
-	left: 25%;
-	margin-top: 15px;
-	background-color: #FAFAFA;
-	box-shadow: 0px 0px 1px #888888;
-	text-align: center;
-	display: table;
-}
-
-#add-event-button {
-	display: table-cell;
-   	vertical-align: middle;
-   	color: #636363;
-   	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
-	font-weight: 700;
-	text-decoration: none;
-	cursor: pointer;
 }
 
 #add-event:hover {
@@ -124,7 +130,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     display: none;
     z-index: 100;
 }
@@ -133,27 +139,45 @@ html, body {
 	position: relative;
   	margin-left: auto;
   	margin-right: auto;
-	margin-top: 13px;
-	width: 28%;
-	height: 350px;
+	margin-top: 80px;
+	min-width: 610px;
+	max-width: 610px;
+	width: 32%;
+	height: 385px;
 	box-shadow: 0px 0px 1px #888888;
+	z-index: 10000 !important;
+	border-radius: 2px;
+	background-color: #232427;
+	color: #BFC0C6;
 	display: none;
-	z-index: 101;
-	background-color: white;
+	font-family: 'Proxima Nova Light';
+	-webkit-box-shadow: -1px 1px 68px -30px rgba(156,151,156,1);
+	-moz-box-shadow: -1px 1px 68px -30px rgba(156,151,156,1);
+	box-shadow: -1px 1px 68px -30px rgba(156,151,156,1);
+}
+
+#add-event-title {
+	position: relative;
+	float: left;
+	left: 12.5%;
+	top: 5%;
+	font-size: 27px;
 }
 
 #field-name {
 	position: relative;
 	float: left;
-	left: 4%;
+	left: 6%;
 	font-size: 14.5px;
 	top: 3%;
+	margin-top: 14px;
 }
 
 #data-field {
 	position: relative;
 	float: right;
 	right: 8%;
+	margin-top: 14px;
 }
 
 #field-name ul, #data-field ul{
@@ -162,12 +186,12 @@ html, body {
 
 #field-name li {
 	text-align: right;
-	padding-bottom: 23px;
+	padding-bottom: 21px;
 	padding-right: 7px;
 }
 
 #field-name li:last-child {
-	padding-top: 42px;
+	padding-top: 49.5px;
 }
 
 #data-field li:not(:last-child) {
@@ -177,11 +201,14 @@ html, body {
 
 #name, #location, #date, #time, #description, #type {
 	padding-left: 7px;
+	font-family: 'Proxima Nova';
+	border: none;
+	border-radius: 2px;
 }
 
 #name, #location, #type {
 	height: 27px;
-	width: 330px;
+	width: 380px;
 }
 
 #date {
@@ -194,23 +221,76 @@ html, body {
 }
 
 #description {
-	width: 330px;
+	width: 380px;
 	height: 70px;
 	padding-top: 7px;
 	resize: none;
-	font-family: 'Benton Sans';
+	font-family: 'Proxima Nova';
 }
 
-#create-button {
+#create-button, #cancel-button {
 	position: relative;
+	margin-top: 7px;
+	margin-left: 7px;
 	float: right;
-	height: 30px;
-	width: 80px;
+	height: 23px;
+	width: 75px;
 	border: none;
-	border-radius: 2px;
+	border-radius: 3px;
+	color: #636363;
+	font-weight: 700;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.17), 0 1px 0 rgba(255, 255, 255, 0.36) inset;
+	background: rgb(224, 224, 224);
+	background: -moz-linear-gradient(top,  rgba(224,224,224,1) 0%, rgba(206,206,206,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(100%,rgba(206,206,206,1)));
+	background: -webkit-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	background: -o-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	background: linear-gradient(to bottom,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	display: block;
 	cursor: pointer;
 }
 
-#create-button:hover {
-	background-color: #F6F6F6;
+#create-button:hover, #cancel-button:hover {
+	background: rgb(216, 216, 216);
+	background: -moz-linear-gradient(top,  rgba(216, 216, 216, 1) 0%, rgba(198, 198, 198, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(216, 216, 216, 1)), color-stop(100%,rgba(198, 198, 198, 1)));
+	background: -webkit-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+	background: -o-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+	background: -ms-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+	background: linear-gradient(to bottom,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+}
+
+#upcoming-events-container {
+	width: 54%;
+	height: 280px;
+	position: relative;
+	left: 23%;
+	margin-top: 25px;
+	z-index: 3;
+}
+
+#upcoming-events-title {
+	color: #DFE0E6;
+	font-family: 'Proxima Nova Light';
+	font-size: 32px;
+}
+
+#no-upcoming-events {
+	position: absolute;
+	color: #DFE0E6;
+	font-family: 'Proxima Nova Light';
+	text-align: center;
+	font-size: 25px;
+	top: 115px;
+	left: 33%;
+}
+
+.line-divisor {
+	background-color: #1A1B1D;
+	width: 100%;
+	height: 2px;
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
