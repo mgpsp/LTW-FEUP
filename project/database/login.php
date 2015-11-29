@@ -1,7 +1,6 @@
 <?php
 	session_start();
 	include_once('connection.php');
-	global $db;
 	
 	$username = $_POST["username"];
 	$password = $_POST["password"];
@@ -14,6 +13,7 @@
 	}
 	else {
 		$_SESSION['username'] = $username;
+		$_SESSION['userID'] = $result['userID'];
 		echo "true";
 	}
 ?>

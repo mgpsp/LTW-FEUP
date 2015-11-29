@@ -3,7 +3,7 @@
 </head>
 <body>
 	<div id="header">
-		<a href="../index.php?page=main"><img id="site-logo" src="../images/logo2.png" alt="Site logo" height="35" width="35"></a>
+		<a href="../index.php?page=main"><img id="site-logo" src="../images/logas.png" alt="Site logo" height="37" width="35"></a>
 		<form id="search-bar" action="../index.php?page=main" method="post">
 			<input id="search-box" type="text" placeholder="Search">
 		</form>
@@ -15,10 +15,27 @@
   	<div id="dim"></div>
 
   	<div id="upcoming-events-container">
-  		<div id="upcoming-events-title">Upcoming events</div>
+  		<div id="upcoming-events-title"><?= $_SESSION['username'] ?>'s upcoming events</div>
   		<div class="line-divisor"></div>
   		<div id="upcoming-events">
-  			<div id="no-upcoming-events">You have no upcoming events.<br><font size ="4px">Check in to some events.</font></div>
+  			<?php
+  				include('database/upcomingevents.php');
+  				if (empty($upcoming_events))
+  					echo '<div id="no-upcoming-events">You have no upcoming events.<br><font size ="4px">Check in to some events.</font></div>';
+  				else
+  					foreach (array_slice($upcoming_events, 0, 3) as $event) {
+  			?>
+
+  			<div class="event-container">
+  				<div class="event-banner" style='background: url("<?php echo $event['banner']?>") 50% 50% no-repeat; background-size: cover;'>
+  					<div class="going-label"><img src="../images/goingLabel.png"></div>
+  					<div class="event-hover"><a href=""><!--<img src="../images/yes.png" height="30" width="30">--><a href=""><img src="../images/no.png" height="26" width="26"></a></div>
+  				</div>
+  				<div class="event-date"><?php echo strtoupper(date("D, j M H:i", strtotime($event['eventDate'])))?></div>
+  				<div class="event-name"><?php echo $event['name'] ?></div>
+  				<div class="event-location"><?php echo $event['location'] ?></div>
+  			</div>
+  			<?php } ?>
   		</div>
   	</div>
 

@@ -8,47 +8,6 @@ document.getElementById("cancel-button").onclick = function () {
 	$('#add-event-form').fadeOut(150);
 }
 
-/*document.getElementById("create-button").onclick = function () {
-	var name = document.getElementById("name");
-	var location = document.getElementById("location");
-	var type = document.getElementById("type");
-	var date = document.getElementById("date");
-	var time = document.getElementById("time");
-	var description = document.getElementById("description");
-	var photo = document.getElementById("photo");
-
-	var datetime = date.value + ' ' + time.value;
-
-	var formData = {
-		"name" : name.value,
-		"location" : location.value,
-		"type" : type.value,
-		"datetime" : datetime,
-		"description" : description.value,
-		"photo" : fileInputElement.files[0]
-	};
-
-	var formData = new FormData();
-	formData.append("name", name.value);
-	formData.append("location", location.value);
-	formData.append("type", type.value);
-	formData.append("datetime", datetime.value);
-	formData.append("description", description.value);
-	formData.append("photo",  photo.value);
-
-	console.log(formData);
-
-	var addevent = $.post("../database/addevent.php", formData);
-
-	addevent.done(function(data) {
-		if (data == "true") {
-			document.getElementById("data-field").submit();
-		}
-	});
-
-	return false;
-}*/
-
 window.onload = function() {
 	$('html, body').fadeIn(500);
 
