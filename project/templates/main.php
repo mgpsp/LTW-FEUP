@@ -8,7 +8,7 @@
 			<input id="search-box" type="text" placeholder="Search">
 		</form>
 		<a id="logout-button" href="../database/logout.php"><img  src="../images/logout.png" alt="Logout" height="15" width="15"></a>
-		<a id="username" href=""><img  src="../images/user.png" alt="Logout" height="15" width="15"> <?= $_SESSION['username'] ?></a>
+		<a id="username" href="#"><img  src="../images/user.png" alt="Logout" height="15" width="15"> <?= $_SESSION['username'] ?></a>
 		<div id="add-event-button"><img  src="../images/addEvent.png" alt="Logout" height="13" width="13"> Add event</div>
   	</div>
 
@@ -29,7 +29,9 @@
   			<div class="event-container">
   				<div class="event-banner" style='background: url("<?php echo $event['banner']?>") 50% 50% no-repeat; background-size: cover;'>
   					<div class="going-label"><img src="../images/goingLabel.png"></div>
-  					<div class="event-hover"><a href=""><!--<img src="../images/yes.png" height="30" width="30">--><a href=""><img src="../images/no.png" height="26" width="26"></a></div>
+  					<div class="event-hover">
+  						<a href='../database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/no.png" height="26" width="26"></a>
+  					</div>
   				</div>
   				<div class="event-date"><?php echo strtoupper(date("D, j M H:i", strtotime($event['eventDate'])))?></div>
   				<div class="event-name"><?php echo $event['name'] ?></div>
@@ -49,9 +51,10 @@
 	  			<li>Date/Time</li>
 	  			<li>Description</li>
 	  			<li>Event Photo</li>
+	  			<li>Private</li>
 	  		</ul>
 	  	</div>
-	  	<form id="data-field" action="" method="post" enctype="multipart/form-data">
+	  	<form id="data-field" action="#" method="post" enctype="multipart/form-data">
 	  		<ul>
 		  		<li><input id="name" type="text" required="required" placeholder="Add a short, clear name"></li>
 		  		<li><input id="location" type="text" required="required" placeholder="Include a place or address"></li>
@@ -60,11 +63,13 @@
 		  		<input id="time" type="time" required="required" value="<?php echo date('H:i'); ?>"></li>
 		  		<li><textarea id="description" rows="4" cols="50" placeholder="Tell people more about the event"></textarea></li>
 		  		<li><input id="photo" type="file" name="photo"></li>
+		  		<li><input id="private" type="checkbox"></li>
 	  		</ul>
 	  		<input id="create-button" type="submit" value="Create">
 	  		<input id="cancel-button" type="button" value="Cancel">
 	  	</form>
   	</div>
 
+  	<script type="text/javascript" src="scripts/main.js"></script>
   	<script type="text/javascript" src="scripts/addevent.js"></script>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>

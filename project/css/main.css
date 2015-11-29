@@ -146,7 +146,7 @@ html, body {
 	min-width: 610px;
 	max-width: 610px;
 	width: 32%;
-	height: 385px;
+	height: 403px;
 	box-shadow: 0px 0px 1px #888888;
 	z-index: 10000 !important;
 	border-radius: 2px;
@@ -193,8 +193,9 @@ html, body {
 	padding-right: 7px;
 }
 
-#field-name li:last-child {
+#field-name li:nth-last-child(2) {
 	padding-top: 51px;
+	padding-bottom: 12px;
 }
 
 #data-field li:not(:last-child) {
@@ -333,7 +334,7 @@ html, body {
 
 .event-hover img {
 	position: relative;
-	top: 38%;
+	top: 41%;
 	margin-left: 30px;
 	margin-right: 30px;
 }
@@ -353,13 +354,14 @@ html, body {
 }
 
 .event-name {
-	font-size: 17px;
+	font-size: 16px;
 	padding-left: 7px;
 	padding-right: 7px;
 	color: #DFE0E6;
-	height: 35px;
+	height: 34px;
 	white-space: normal;
 	overflow: hidden;
+	line-height: 18px;
 }
 
 .event-location {
@@ -367,7 +369,7 @@ html, body {
 	font-size: 14px;
 	color: #88898C;
 	padding-left: 7px;
-	padding-top: 7px;
+	padding-top: 8px;
 	padding-right: 7px;
 	overflow: hidden;
 	text-overflow: ellipsis;

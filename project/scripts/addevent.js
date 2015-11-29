@@ -11,6 +11,11 @@ document.getElementById("cancel-button").onclick = function () {
 window.onload = function() {
 	$('html, body').fadeIn(500);
 
+	/*$('.event-hover a').click(function (e) {
+		e.preventDefault();
+		var href = $(this).attr('href');
+	});*/
+
 	$('#data-field').submit(function(evt) {
 		var name = document.getElementById("name");
 		var location = document.getElementById("location");
@@ -18,7 +23,7 @@ window.onload = function() {
 		var date = document.getElementById("date");
 		var time = document.getElementById("time");
 		var description = document.getElementById("description");
-		var photo = document.getElementById("photo");
+		var privt = $('#private').is(':checked');
 
 		var datetime = date.value + ' ' + time.value;
 
@@ -31,6 +36,7 @@ window.onload = function() {
 		formData.append("datetime", datetime);
 		formData.append("description", description.value);
 		formData.append("photo",  $('#photo')[0].files[0]);
+		formData.append("private", privt);
 
 		$.ajax({
 			type: 'POST',
