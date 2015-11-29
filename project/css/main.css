@@ -58,7 +58,7 @@ html, body {
 	text-decoration: none;
 	font-size: 16.5px;
 	cursor: pointer;
-	word-spacing: 2.5px;
+	word-spacing: 1.5px;
 }
 
 #add-event-button:hover {
