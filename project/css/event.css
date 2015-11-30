@@ -22,10 +22,23 @@
 }
 
 #event-banner {
-	background: url("../images/uploads/565b64580f7af-minimal_christmas_1920x1080.png") 50% 50% no-repeat;
-	background-size: cover;
 	width: 100%;
 	height: 345px;
+}
+
+#event-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 345px;
+	text-align: center;
+	visibility: hidden;
+}
+
+#event-banner:hover #event-hover{
+	background-color: rgba(0, 0, 0, 0.5);
+	visibility: visible;
 }
 
 #event-name {
@@ -79,4 +92,11 @@
 
 #event-info li:last-child {
 	padding-top: 16px;
+}
+
+#event-type {
+	position: absolute;
+	float: right;
+	margin-left: 600px;
+	margin-top: 23px;
 }
