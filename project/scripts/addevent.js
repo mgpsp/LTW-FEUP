@@ -11,11 +11,6 @@ document.getElementById("cancel-button").onclick = function () {
 window.onload = function() {
 	$('html, body').fadeIn(500);
 
-	/*$('.event-hover a').click(function (e) {
-		e.preventDefault();
-		var href = $(this).attr('href');
-	});*/
-
 	$('#data-field').submit(function(evt) {
 		var name = document.getElementById("name");
 		var location = document.getElementById("location");
@@ -49,6 +44,7 @@ window.onload = function() {
 		    success: function(r) {
         	}
 		})
+		
 		$('#dim').fadeOut(200);
 		$('#add-event-form').fadeOut(200);
 	})

@@ -7,7 +7,14 @@
 		return $stmt->fetch();
 	}
 
-	function getUserByID($user_id) {
+	function isUserGoing($user_id, $event_id) {
+		global $db;
+		$stmt = $db->prepare('SELECT * FROM EventGuests WHERE eventID = ? AND userID = ?');
+		$stmt->execute(array($event_id, $user_id));
 
+		if (!$stmt->fetch())
+			return false;
+		else
+			return true;
 	}
 ?>
