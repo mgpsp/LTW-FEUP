@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	include('templates/header.php');
+	include('pages/header.php');
 
 	if (!isset($_SESSION['username']))
 		$_SESSION['username'] = null;
@@ -18,23 +18,23 @@
 
 	switch($redirectTo) {
 		case 'signIn':
-			include('templates/signin.php');
+			include('pages/signin.php');
 			break;
 		case 'signUp':
-			include('templates/signup.php');
+			include('pages/signup.php');
 			break;
 		case 'main':
-			include('templates/main.php');
+			include('pages/main.php');
 			break;
 		case 'event':
 			if (isset($_GET['id']))
 				$event_id = $_GET['id'];
-			include('templates/event.php');
+			include('pages/event.php');
 			break;
 		default:
-			include('templates/signin.php');
+			include('pages/signin.php');
 			break;
 	}
 
-	include 'templates/footer.php';
+	include 'pages/footer.php';
 ?>

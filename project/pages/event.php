@@ -9,7 +9,8 @@
 
 		if (isset($event_id)) {
 			$event = getEventByID($event_id);
-			$event['going'] = isUserGoing($event['eventID'], $_SESSION['userID']);
+			if ($event != null) {
+				$event['going'] = isUserGoing($event['eventID'], $_SESSION['userID']);
 	?>
 
 	<div id="event-container">
@@ -19,9 +20,11 @@
 			<div id="event-name"><?php echo $event['name']?></div>
 		</div>
 
+		<div id="going-info">Quem vai e tal.</div>
+
 		<div id="event-info">
 			<div id="event-type">
-				<img src="../images/<?php echo $event['type']?>.png" height="40" width="40" title=<?php echo $event['type']?>>
+				<img src="../images/<?php echo $event['type']?>.png" height="40" width="40" title="<?php echo $event['type']?>">
 			</div>
 			<ul>
 				<li>
@@ -38,5 +41,14 @@
 				<li><?php echo $event['description']?></li>
 			</ul>
 		</div>
+
+		<div id="comments-container"></div>
 	</div>
+	<?php } else {?>
+	<div id="not-found">Event not found.</div>
 	<?php } ?>
+	<?php } else {?>
+	<div id="not-found">Event not found.</div>
+	<?php } ?>
+
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>

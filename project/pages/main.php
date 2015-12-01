@@ -22,7 +22,7 @@
 					<a title="Not going" href='../database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/no.png" height="26" width="26"></a>
 				</div>
 			</div>
-			<div class="event-type"><img src="../images/<?php echo $event['type']?>.png" height="22" width="22" title=<?php echo $event['type']?>></div>
+			<div class="event-type"><img src="../images/<?php echo $event['type']?>.png" height="19" width="19" title="<?php echo $event['type']?>"></div>
 			<div class="event-date"><?php echo strtoupper(date("D, j M H:i", strtotime($event['eventDate'])))?></div>
 			<div class="event-name"><a href="../index.php?page=event&id=<?php echo $event['eventID'] ?>"><?php echo $event['name'] ?></a></div>
 			<div class="event-location"><?php echo $event['location'] ?></div>
