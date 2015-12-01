@@ -42,7 +42,13 @@
 			</ul>
 		</div>
 
-		<div id="comments-container"></div>
+		<div id="post-comment-title">POST A NEW COMMENT</div>
+		<textarea id="comment-box" rows="4" cols="50" placeholder="Write something..."></textarea>
+		<input id="post-button" type="submit" value="Post">
+		<div id="comments-title">COMMENTS</div>
+		<div class="comment-container">
+			<div class="user-avatar"></div>
+		</div>
 	</div>
 	<?php } else {?>
 	<div id="not-found">Event not found.</div>

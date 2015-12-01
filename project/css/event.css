@@ -109,7 +109,7 @@
 	position: absolute;
 	float: right;
 	margin-left: 600px;
-	margin-top: 23px;
+	margin-top: 21px;
 }
 
 #going-info {
@@ -123,4 +123,90 @@
 	width: 26.1%;
 	height: 131px;
 	background-color: #222326;
+}
+
+#post-comment-title {
+	color: #DFE0E6;
+	margin-top: 18px;
+	font-family: 'Proxima Nova';
+	font-size: 13px;
+}
+
+#comment-box {
+	font-family: 'Proxima Nova Light';
+	font-size: 15px;
+	margin-top: 7px;
+	padding: 20px;
+	width: 65%;
+	height: 70px;
+	border: none;
+	color: #DFE0E6;
+	background-color: #222326;
+	resize: none;
+    outline: none;
+}
+
+#comment-box:focus {
+	color: #DFE0E6;
+	background-color: #38383b;
+}
+
+#post-button {
+	position: relative;
+	left: 62.5%;
+	margin-top: 9px;
+	height: 24px;
+	width: 65px;
+	border: none;
+	border-radius: 3px;
+	color: #636363;
+	font-weight: 700;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
+	box-shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.17), 0 1px 0 rgba(255, 255, 255, 0.36) inset;
+	background: rgb(224, 224, 224);
+	background: -moz-linear-gradient(top,  rgba(224,224,224,1) 0%, rgba(206,206,206,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(224,224,224,1)), color-stop(100%,rgba(206,206,206,1)));
+	background: -webkit-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	background: -o-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	background: -ms-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	background: linear-gradient(to bottom,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
+	display: block;
+	cursor: pointer;
+}
+
+#post-button:hover {
+	background: rgb(216, 216, 216);
+	background: -moz-linear-gradient(top,  rgba(216, 216, 216, 1) 0%, rgba(198, 198, 198, 1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(216, 216, 216, 1)), color-stop(100%,rgba(198, 198, 198, 1)));
+	background: -webkit-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+	background: -o-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+	background: -ms-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+	background: linear-gradient(to bottom,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+}
+
+#comments-title {
+	color: #DFE0E6;
+	font-family: 'Proxima Nova';
+	margin-top: 3px;
+	font-size: 13px;
+}
+
+.comment-container {
+	font-family: 'Proxima Nova Light';
+	color: #DFE0E6;
+	margin-top: 7px;
+	padding: 20px;
+	width: 65%;
+	height: auto;
+	max-height: 400px;
+	min-height: 120px;
+	background-color: #222326;
+	margin-bottom: 15px;
+}
+
+.user-avatar {
+	width: 20%;
+	height: 20%;
+	background: url("../images/avatar.jpg") 50% 50% no-repeat;
+	background-size: cover;
 }
