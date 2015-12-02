@@ -10,12 +10,26 @@
 		if (isset($event_id)) {
 			$event = getEventByID($event_id);
 			if ($event != null) {
-				$event['going'] = isUserGoing($event['eventID'], $_SESSION['userID']);
+				$event['going'] = isUserGoing($_SESSION['userID'], $event_id);
 	?>
 
 	<div id="event-container">
 		<div id="event-banner" style='background: url("<?php echo $event['banner']?>") 50% 50% no-repeat; background-size: cover;'>
-			<div id="event-hover"></div>
+			<?php
+				if($event['going']) {
+			?>
+			<div id="going-label" style="visibility: visible;"><img src="../images/goingLabel.png" height="120" width="120"></div>
+			<div id="event-hover">
+				<a title="Not going" href='../database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/no.png" height="85" width="85"></a>
+			</div>
+			<?php
+				} else {
+			?>
+			<div id="going-label" style="visibility: hidden;"><img src="../images/goingLabel.png" height="120" width="120"></div>
+			<div id="event-hover">
+				<a title="Going" href='../database/going.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/yes.png" height="100" width="100"></a>
+			</div>
+			<?php } ?>
 			<div id="event-name"><?php echo $event['name']?></div>
 		</div>
 
@@ -44,20 +58,25 @@
 		<div id="post-comment-title">POST A NEW COMMENT</div>
 		<form id="comment-form" action="../database/addcomment.php" method="post">
 			<textarea id="comment-box" name="comment-box" rows="4" cols="50" placeholder="Write something..." required></textarea>
-			<input id="event-id" name="event-id" type="hidden" value="1">
+			<input id="event-id" name="event-id" type="hidden" value="<?php echo $event_id?>">
 			<input id="post-button" type="submit" value="Post">
 		</form>
 		<div id="comments-title">COMMENTS</div>
+		<?php
+			$comments = getEventComments($event_id);
+			if (empty($comments)) {
+		?>
+		<div id="no-comments">Be the first to comment on this event.</div>
+		<?php } else
+			foreach ($comments as $comment) {
+				$avatar = getUserAvatar($comment['author']);
+		?>
 		<div class="comment-container">
-			<div class="username">martalopes <a class="comment-date">01/12/2015 at 09:40</a></div>
-			<div class="user-avatar"></div>
-			<div class="comment">Também há muitas séries que comecei a ver graças ao TVD.<br><br>
-				Acho que por vezes, dá já para avaliar nos primeiros 5 ou 10 minutos. E outra coisa ainda, devias ter acrescentado a representação dos actores. Acho que isso também importa. Se parece que estão a “vender o material” ou com cara de enjoados.
-			Também há muitas séries que comecei a ver graças ao TVD.<br><br>
-				Acho que por vezes, dá já para avaliar nos primeiros 5 ou 10 minutos. E outra coisa ainda, devias ter acrescentado a representação dos actores. Acho que isso também importa. Se parece que estão a “vender o material” ou com cara de enjoados.</div>
-
+			<div class="username"><?php echo $comment['author']?> <a class="comment-date"><?php echo $comment['commentDate']?></a></div>
+			<div class="user-avatar" style="background: url('<?php echo $avatar ?>') 50% 50% no-repeat; background-size: cover;"></div>
+			<div class="comment"><?php echo $comment['content']?></div>
 		</div>
-	</div>
+		<?php } ?>
 	<?php } else {?>
 	<div id="not-found">Event not found.</div>
 	<?php } ?>

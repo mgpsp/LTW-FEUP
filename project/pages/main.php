@@ -31,14 +31,15 @@
   	</div>
 
   	<div id="upcoming-events-container">
-  		<div id="all-events-title">What's happenning</div>
+  		<div id="all-events-title">What are you looking for?</div>
   		<div class="line-divisor"></div>
   		<div class="type-images" style='background: url("../images/allevents.png") 50% 50% no-repeat;'><a href="">All</a></div>
   		<div class="type-images" style='background: url("../images/academicevent.png") 50% 50% no-repeat;'><a href="">Academic</a></div>
+  		<div class="type-images" style='background: url("../images/artsevent.png") 50% 50% no-repeat;'><a href="">Arts</a></div>
   		<div class="type-images" style='background: url("../images/businessevent.png") 50% 50% no-repeat;'><a href="">Business</a></div>
   		<div class="type-images" style='background: url("../images/communityevent.png") 50% 50% no-repeat;'><a href="">Community</a></div>
-  		<div class="type-images" style='background: url("../images/cultureevent.png") 50% 50% no-repeat;'><a href="">Culture</a></div>
   		<div class="type-images" style='background: url("../images/eatingevent.png") 50% 50% no-repeat;'><a href="">Foods & Drinks</a></div>
+  		<div class="type-images" style='background: url("../images/musicevent.png") 50% 50% no-repeat;'><a href="">Music</a></div>
   		<div class="type-images" style='background: url("../images/politicevent.png") 50% 50% no-repeat;'><a href="">Politics</a></div>
   		<div class="type-images" style='background: url("../images/Recreationevent.png") 50% 50% no-repeat;'><a href="">Recreation</a></div>
   		<div class="type-images" style='background: url("../images/religiousevent.png") 50% 50% no-repeat;'><a href="">Religion</a></div>

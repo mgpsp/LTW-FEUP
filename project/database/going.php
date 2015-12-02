@@ -7,5 +7,9 @@
 	$stmt = $db->prepare('INSERT INTO EventGuests(eventID, userID, status) VALUES (?, ? ,?)');
 	$stmt->execute(array($event_id, $user_id, "going"));
 
-	header("Location: ../index.php?page=main");
+	$previous = "javascript:history.go(-1)";
+	if(isset($_SERVER['HTTP_REFERER']))
+    	$previous = $_SERVER['HTTP_REFERER'];
+
+	header("Location: " . $previous);
 ?>

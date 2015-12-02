@@ -7,5 +7,9 @@
 	$stmt = $db->prepare('DELETE FROM EventGuests WHERE userID = ? AND eventID = ?');
 	$stmt->execute(array($user_id, $event_id));
 
-	header("Location: ../index.php?page=main");
+	$previous = "javascript:history.go(-1)";
+	if(isset($_SERVER['HTTP_REFERER']))
+    	$previous = $_SERVER['HTTP_REFERER'];
+
+	header("Location: " . $previous);
 ?>
