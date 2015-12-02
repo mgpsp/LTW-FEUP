@@ -15,8 +15,7 @@
 
 	<div id="event-container">
 		<div id="event-banner" style='background: url("<?php echo $event['banner']?>") 50% 50% no-repeat; background-size: cover;'>
-			<div id="event-hover">
-			</div>
+			<div id="event-hover"></div>
 			<div id="event-name"><?php echo $event['name']?></div>
 		</div>
 
@@ -43,11 +42,20 @@
 		</div>
 
 		<div id="post-comment-title">POST A NEW COMMENT</div>
-		<textarea id="comment-box" rows="4" cols="50" placeholder="Write something..."></textarea>
-		<input id="post-button" type="submit" value="Post">
+		<form id="comment-form" action="../database/addcomment.php" method="post">
+			<textarea id="comment-box" name="comment-box" rows="4" cols="50" placeholder="Write something..." required></textarea>
+			<input id="event-id" name="event-id" type="hidden" value="1">
+			<input id="post-button" type="submit" value="Post">
+		</form>
 		<div id="comments-title">COMMENTS</div>
 		<div class="comment-container">
+			<div class="username">martalopes <a class="comment-date">01/12/2015 at 09:40</a></div>
 			<div class="user-avatar"></div>
+			<div class="comment">Também há muitas séries que comecei a ver graças ao TVD.<br><br>
+				Acho que por vezes, dá já para avaliar nos primeiros 5 ou 10 minutos. E outra coisa ainda, devias ter acrescentado a representação dos actores. Acho que isso também importa. Se parece que estão a “vender o material” ou com cara de enjoados.
+			Também há muitas séries que comecei a ver graças ao TVD.<br><br>
+				Acho que por vezes, dá já para avaliar nos primeiros 5 ou 10 minutos. E outra coisa ainda, devias ter acrescentado a representação dos actores. Acho que isso também importa. Se parece que estão a “vender o material” ou com cara de enjoados.</div>
+
 		</div>
 	</div>
 	<?php } else {?>
@@ -57,4 +65,5 @@
 	<div id="not-found">Event not found.</div>
 	<?php } ?>
 
+	<script type="text/javascript" src="scripts/addcomment.js"></script>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>

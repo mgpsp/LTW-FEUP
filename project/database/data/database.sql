@@ -33,7 +33,8 @@ CREATE TABLE Comments (
 	commentID INTEGER PRIMARY KEY AUTOINCREMENT,
 	content TEXT NOT NULL,
 	eventID INTEGER REFERENCES Events(eventID),
-	author TEXT NOT NULL
+	author TEXT NOT NULL,
+	commentDate TEXT DEFAULT (datetime('now','localtime'))
 );
 
 -- TESTING INFORMATION

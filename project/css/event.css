@@ -154,7 +154,7 @@
 #post-button {
 	position: relative;
 	left: 62.5%;
-	margin-top: 9px;
+	margin-top: 4px;
 	height: 24px;
 	width: 65px;
 	border: none;
@@ -170,8 +170,8 @@
 	background: -o-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
 	background: -ms-linear-gradient(top,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
 	background: linear-gradient(to bottom,  rgba(224,224,224,1) 0%,rgba(206,206,206,1) 100%);
-	display: block;
 	cursor: pointer;
+	display: none;
 }
 
 #post-button:hover {
@@ -187,7 +187,7 @@
 #comments-title {
 	color: #DFE0E6;
 	font-family: 'Proxima Nova';
-	margin-top: 3px;
+	margin-top: 9px;
 	font-size: 13px;
 }
 
@@ -195,18 +195,45 @@
 	font-family: 'Proxima Nova Light';
 	color: #DFE0E6;
 	margin-top: 7px;
-	padding: 20px;
-	width: 65%;
+	padding: 10px;
+	width: 66.9%;
 	height: auto;
-	max-height: 400px;
+	max-height: 700px;
 	min-height: 120px;
 	background-color: #222326;
 	margin-bottom: 15px;
 }
 
 .user-avatar {
-	width: 20%;
-	height: 20%;
+	width: 60px;
+	height: 60px;
+	float: left;
 	background: url("../images/avatar.jpg") 50% 50% no-repeat;
 	background-size: cover;
+	border-radius: 50%;
+	margin-top: 5px;
+	left: 50%;
+}
+
+.username {
+	font-family: 'Proxima Nova';
+	font-size: 18px;
+	position: relative;
+	left: -60.5%;
+	float: right;
+	margin-top: 4px;
+}
+
+.comment-date {
+	font-family: 'Proxima Nova Light';
+	font-size: 12px;
+	padding-left: 5px;
+	color: white;
+}
+
+.comment {
+	margin-top: 33px;
+	margin-left: 74px;
+	padding-bottom: 4px;
+	font-size: 16px;
 }

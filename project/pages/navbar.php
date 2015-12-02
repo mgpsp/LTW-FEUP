@@ -23,11 +23,11 @@
 	  			<li>Private</li>
 	  		</ul>
 	  	</div>
-	  	<form id="data-field" action="#" method="post" enctype="multipart/form-data">
+	  	<form id="data-field" action="" method="post" enctype="multipart/form-data">
 	  		<ul>
 		  		<li><input id="name" type="text" required="required" placeholder="Add a short, clear name"></li>
 		  		<li><input id="location" type="text" required="required" placeholder="Include a place or address"></li>
-		  		<li><!--<input id="type" type="text" required="required" placeholder="Specify the type of the event">-->
+		  		<li>
 		  			<select id="type">
 		  				<option value="Academic">Academic</option>
 					    <option value="Business">Business</option>
