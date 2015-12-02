@@ -4,7 +4,7 @@
 	
 	$author = $_SESSION['username'];
 	$event_id = $_POST["event-id"];
-	$content = $_POST["comment-box"];
+	$content = htmlspecialchars($_POST["comment-box"], ENT_QUOTES);
 
 	$stmt = $db->prepare('INSERT INTO Comments (content, eventID, author) VALUES (?, ?, ?)');
 	$stmt->execute(array($content, $event_id, $author));

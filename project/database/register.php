@@ -2,9 +2,9 @@
 	session_start();
 	include_once('connection.php');
 	
-	$username = $_POST["username"];
-	$password = $_POST["password"];
-	$email = $_POST["email"];
+	$username = htmlspecialchars($_POST["username"], ENT_QUOTES);
+	$password = htmlspecialchars($_POST["password"], ENT_QUOTES);
+	$email = htmlspecialchars($_POST["email"], ENT_QUOTES);
 
 	$stmt = $db->prepare('SELECT * FROM Users WHERE username = ? OR email = ?');
 	$stmt->execute(array($username, $email));

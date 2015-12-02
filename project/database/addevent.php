@@ -2,11 +2,11 @@
 	session_start();
 	include_once('connection.php');
 
-	$name = $_POST["name"];
-	$location = $_POST["location"];
+	$name = htmlspecialchars($_POST["name"], ENT_QUOTES);
+	$location = htmlspecialchars($_POST["location"], ENT_QUOTES);
 	$type = $_POST["type"];
-	$eventDate = $_POST["datetime"];
-	$description = $_POST["description"];
+	$eventDate = htmlspecialchars($_POST["datetime"], ENT_QUOTES);
+	$description = htmlspecialchars($_POST["description"], ENT_QUOTES);
 	$private = $_POST["private"];
 	$host = $_SESSION['username'];
 

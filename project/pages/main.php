@@ -13,7 +13,7 @@
 			if (empty($upcoming_events))
 				echo '<div class="no-upcoming-events">You have no upcoming events.<br><font size ="4px">Check in to some events.</font></div>';
 			else
-				foreach (array_slice($upcoming_events, 0, 3) as $event) {
+				foreach (array_slice($upcoming_events, 0, 4) as $event) {
 		?>
 		<div class="event-container">
 			<div class="event-banner" style='background: url("<?php echo $event['banner']?>") 50% 50% no-repeat; background-size: cover;'>
@@ -33,37 +33,18 @@
   	<div id="upcoming-events-container">
   		<div id="all-events-title">What's happenning</div>
   		<div class="line-divisor"></div>
-  		<?php
-			$upcoming_events = getUpcomingEvents();
-			if (empty($upcoming_events))
-				echo '<div class="no-upcoming-events">There are no upcoming events.</div>';
-			else
-				foreach ($upcoming_events as $event) {
-  		?>
-  		<div class="event-container">
-			<div class="event-banner" style='background: url("<?php echo $event['banner']?>") 50% 50% no-repeat; background-size: cover;'>
-				<?php
-					if($event['going']) {
-				?>
-				<div class="going-label"><img src="../images/goingLabel.png" height="50" width="50"></div>
-				<div class="event-hover">
-					<a title="Not going" href='../database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/no.png" height="26" width="26"></a>
-				</div>
-				<?php
-					} else {
-				?>
-				<div class="event-hover">
-					<a title="Going" href='../database/going.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/yes.png" height="30" width="30"></a>
-				</div>
-				<?php } ?>
-			</div>
-			<div class="event-date"><?php echo strtoupper(date("D, j M H:i", strtotime($event['eventDate'])))?></div>
-			<div class="event-name"><a href="#"><?php echo $event['name'] ?></a></div>
-			<div class="event-location"><?php echo $event['location'] ?></div>
-		</div>
-		<?php } ?>
+  		<div class="type-images" style='background: url("../images/allevents.png") 50% 50% no-repeat;'><a href="">All</a></div>
+  		<div class="type-images" style='background: url("../images/academicevent.png") 50% 50% no-repeat;'><a href="">Academic</a></div>
+  		<div class="type-images" style='background: url("../images/businessevent.png") 50% 50% no-repeat;'><a href="">Business</a></div>
+  		<div class="type-images" style='background: url("../images/communityevent.png") 50% 50% no-repeat;'><a href="">Community</a></div>
+  		<div class="type-images" style='background: url("../images/cultureevent.png") 50% 50% no-repeat;'><a href="">Culture</a></div>
+  		<div class="type-images" style='background: url("../images/eatingevent.png") 50% 50% no-repeat;'><a href="">Foods & Drinks</a></div>
+  		<div class="type-images" style='background: url("../images/politicevent.png") 50% 50% no-repeat;'><a href="">Politics</a></div>
+  		<div class="type-images" style='background: url("../images/Recreationevent.png") 50% 50% no-repeat;'><a href="">Recreation</a></div>
+  		<div class="type-images" style='background: url("../images/religiousevent.png") 50% 50% no-repeat;'><a href="">Religion</a></div>
+  		<div class="type-images" style='background: url("../images/sportsevent.png") 50% 50% no-repeat;'><a href="">Sports</a></div>
+  		<div class="type-images" style='background: url("../images/otherevent.png") 50% 50% no-repeat;'><a href="">Other</a></div>
   	</div>
 
-  	<script type="text/javascript" src="scripts/main.js"></script>
   	<script type="text/javascript" src="scripts/addevent.js"></script>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
