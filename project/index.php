@@ -7,7 +7,7 @@
 
 	$redirectTo = isset($_GET['page']) ? $_GET['page'] : 'signIn';
 
-	$loginRequired = array('main', 'event', 'search');
+	$loginRequired = array('main', 'event', 'search', 'userevents');
 
 	foreach ($loginRequired as $page) {
 		if ($redirectTo === $page && $_SESSION['username'] === null) {
@@ -37,7 +37,16 @@
 
 			if (isset($_GET['val']))
 				$val = $_GET['val'];
+
+			if (isset($_GET['filter']))
+				$filter = $_GET['filter'];
 			include('pages/search.php');
+			break;
+		case 'userevents':
+			if (isset($_GET['filter']))
+				$filter=$_GET['filter'];
+
+			include('pages/userevents.php');
 			break;
 		default:
 			include('pages/signin.php');

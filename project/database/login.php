@@ -14,6 +14,7 @@
 	else {
 		$_SESSION['username'] = $username;
 		$_SESSION['userID'] = $result['userID'];
+		$_SESSION['avatar'] = $result['avatar'];
 		echo "true";
 	}
 ?>

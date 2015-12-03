@@ -7,7 +7,7 @@
 		return $stmt->fetch();
 	}
 
-	function getEventsByType($type) {
+	function getUpcomingEventsByType($type) {
 		global $db;
 		if ($type != "All") {
 			$stmt = $db->prepare('SELECT * FROM Events WHERE type = ?');
@@ -17,8 +17,48 @@
 			$stmt = $db->prepare('SELECT * FROM Events');
 			$stmt->execute();
 		}
-		
-		return $stmt->fetchAll();
+		$events = $stmt->fetchAll();
+
+		$upcoming_events = array();
+		if (!empty($events)) {
+			$today = date("Y-m-d H:i");
+			foreach ($events as $event) {
+				$event_info = getEventByID($event['eventID']);
+				if ($event_info['eventDate'] > $today)
+					$upcoming_events[] = $event_info;
+			}
+		}
+
+		usort($upcoming_events, "sortFunction");
+
+		return $upcoming_events;
+	}
+
+	function getPastEventsByType($type) {
+		global $db;
+		if ($type != "All") {
+			$stmt = $db->prepare('SELECT * FROM Events WHERE type = ?');
+			$stmt->execute(array($type));
+		}
+		else {
+			$stmt = $db->prepare('SELECT * FROM Events');
+			$stmt->execute();
+		}
+		$events = $stmt->fetchAll();
+
+		$upcoming_events = array();
+		if (!empty($events)) {
+			$today = date("Y-m-d H:i");
+			foreach ($events as $event) {
+				$event_info = getEventByID($event['eventID']);
+				if ($event_info['eventDate'] < $today)
+					$upcoming_events[] = $event_info;
+			}
+		}
+
+		usort($upcoming_events, "sortFunction");
+
+		return $upcoming_events;
 	}
 
 	function searchEvents($val) {

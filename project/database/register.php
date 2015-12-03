@@ -23,6 +23,7 @@
 		$stmt->execute(array($username, $password));
 		$result = $stmt->fetch();
 		$_SESSION['userID'] = $result['userID'];
+		$_SESSION['avatar'] = $result['avatar'];
 		echo "true";
 	}
 ?>

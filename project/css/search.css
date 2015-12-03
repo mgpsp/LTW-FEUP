@@ -8,18 +8,29 @@
   src: url('../fonts/ProximaNova-Light.otf');
 }
 
-#events-container {
+.events-container {
 	width: 54%;
-	height: 345px;
+	height: auto;
 	position: relative;
 	left: 23%;
 	margin-top: 25px;
 }
 
-#search-title {
+.title {
 	color: #DFE0E6;
 	font-family: 'Proxima Nova Light';
 	font-size: 32px;
+}
+
+.title a{
+	color: #DFE0E6;
+	font-family: 'Proxima Nova Light';
+	font-size: 32px;
+	text-decoration: none;
+}
+
+.title a:hover {
+	text-decoration: underline;
 }
 
 .no-events {
@@ -30,4 +41,13 @@
 	font-size: 25px;
 	top: 115px;
 	left: 41%;
+}
+
+#past-events a{
+	color: #9fa0a3;
+	font-family: 'Proxima Nova Light';
+	float: right;
+	margin-top: 17px;
+	font-size: 15px;
+	text-decoration: none;
 }

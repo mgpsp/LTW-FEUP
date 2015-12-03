@@ -1,6 +1,4 @@
 <?php
-	session_start();
-	$_SESSION['username'] = null;
-	$_SESSION['userID'] = null;
+	session_destroy();
 	header("Location: ../index.php?page=signIn");
 ?>

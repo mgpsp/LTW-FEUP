@@ -5,13 +5,14 @@
 	<?php include('navbar.php') ?>
 
   	<div id="user-upcoming-events-container">
-  		<div id="upcoming-events-title"><?= $_SESSION['username'] ?>'s upcoming events</div>
+  		<div><div id="title-right"><a href="../index.php?page=userevents&filter=past">PAST EVENTS</a> <a href="../index.php?page=userevents&filter=upcoming">SEE ALL</a></div>
+	  	<div id="upcoming-events-title"><?= $_SESSION['username'] ?>'s upcoming events</div></div>
   		<div class="line-divisor"></div>
 		<?php
 			include('database/upcomingevents.php');
 			$upcoming_events = getUserUpcomingEvents();
 			if (empty($upcoming_events))
-				echo '<div class="no-upcoming-events">You have no upcoming events.<br><font size ="4px">Check in to some events.</font></div>';
+				echo '<div class="no-upcoming-events">You have no upcoming events.</div>';
 			else
 				foreach (array_slice($upcoming_events, 0, 4) as $event) {
 		?>
@@ -32,41 +33,41 @@
   	<div id="upcoming-events-container">
   		<div id="all-events-title">What are you looking for?</div>
   		<div class="line-divisor"></div>
-  		<div onclick="location.href='../index.php?page=search&type=All';" class="type-images" style='background: url("../images/allevents.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=All">All</a>
+  		<div onclick="location.href='../index.php?page=search&type=All&filter=upcoming';" class="type-images" style='background: url("../images/allevents.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=All&filter=upcoming">All</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Academic';" class="type-images" style='background: url("../images/academicevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Academic">Academic</a>
+  		<div onclick="location.href='../index.php?page=search&type=Academic&filter=upcoming';" class="type-images" style='background: url("../images/academicevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Academic&filter=upcoming">Academic</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Arts';" class="type-images" style='background: url("../images/artsevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Arts">Arts</a>
+  		<div onclick="location.href='../index.php?page=search&type=Arts&filter=upcoming';" class="type-images" style='background: url("../images/artsevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Arts&filter=upcoming">Arts</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Business';" class="type-images" style='background: url("../images/businessevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Business">Business</a>
+  		<div onclick="location.href='../index.php?page=search&type=Business&filter=upcoming';" class="type-images" style='background: url("../images/businessevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Business&filter=upcoming">Business</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Community';" class="type-images" style='background: url("../images/communityevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Community">Community</a>
+  		<div onclick="location.href='../index.php?page=search&type=Community&filter=upcoming';" class="type-images" style='background: url("../images/communityevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Community&filter=upcoming">Community</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Food%20%26%20Drinks';" class="type-images" style='background: url("../images/eatingevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Food%20%26%20Drinks">Food & Drinks</a>
+  		<div onclick="location.href='../index.php?page=search&type=Food%20%26%20Drinks&filter=upcoming';" class="type-images" style='background: url("../images/eatingevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Food%20%26%20Drinks&filter=upcoming">Food & Drinks</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Music';" class="type-images" style='background: url("../images/musicevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Music">Music</a>
+  		<div onclick="location.href='../index.php?page=search&type=Music&filter=upcoming';" class="type-images" style='background: url("../images/musicevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Music&filter=upcoming">Music</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Politics';" class="type-images" style='background: url("../images/politicevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Politics">Politics</a>
+  		<div onclick="location.href='../index.php?page=search&type=Politics&filter=upcoming';" class="type-images" style='background: url("../images/politicevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Politics&filter=upcoming">Politics</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Recreation';" class="type-images" style='background: url("../images/Recreationevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Recreation">Recreation</a>
+  		<div onclick="location.href='../index.php?page=search&type=Recreation&filter=upcoming';" class="type-images" style='background: url("../images/Recreationevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Recreation&filter=upcoming">Recreation</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Religious';" class="type-images" style='background: url("../images/religiousevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Religious">Religion</a>
+  		<div onclick="location.href='../index.php?page=search&type=Religious&filter=upcoming';" class="type-images" style='background: url("../images/religiousevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Religious&filter=upcoming">Religion</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Sports';" class="type-images" style='background: url("../images/sportsevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Sports">Sports</a>
+  		<div onclick="location.href='../index.php?page=search&type=Sports&filter=upcoming';" class="type-images" style='background: url("../images/sportsevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Sports&filter=upcoming">Sports</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Other';" class="type-images" style='background: url("../images/otherevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Other">Other</a>
+  		<div onclick="location.href='../index.php?page=search&type=Other&filter=upcoming';" class="type-images" style='background: url("../images/otherevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Other&filter=upcoming">Other</a>
   		</div>
   	</div>
 

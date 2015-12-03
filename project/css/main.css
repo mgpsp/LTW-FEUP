@@ -10,7 +10,8 @@
 
 #user-upcoming-events-container {
 	width: 54%;
-	height: 345px;
+	height: auto;
+	min-height: 280px;
 	position: relative;
 	left: 23%;
 	margin-top: 25px;
@@ -21,6 +22,24 @@
 	color: #DFE0E6;
 	font-family: 'Proxima Nova Light';
 	font-size: 32px;
+}
+
+#title-right a{
+	color: #9fa0a3;
+	font-family: 'Proxima Nova Light';
+	float: right;
+	margin-top: 17px;
+	margin-bottom: 0;
+	font-size: 15px;
+	text-decoration: none;
+}
+
+#title-right a:not(:first-child) {
+	margin-right: 12px;
+}
+
+#title-right a:hover{
+	text-decoration: underline;
 }
 
 .no-upcoming-events {
