@@ -15,8 +15,8 @@
 		echo "false";
 	}
 	else {
-		$stmt = $db->prepare('INSERT INTO Users (username, password, email) VALUES (?, ?, ?)');
-		$stmt->execute(array($username, $password, $email));
+		$stmt = $db->prepare('INSERT INTO Users (username, password, email, avatar) VALUES (?, ?, ?, ?)');
+		$stmt->execute(array($username, $password, $email, "../images/avatares/default.png"));
 		$_SESSION['username'] = $username;
 
 		$stmt = $db->prepare('SELECT * FROM Users WHERE username = ? AND password = ?');

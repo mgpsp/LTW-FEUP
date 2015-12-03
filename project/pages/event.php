@@ -22,7 +22,7 @@
 			<div id="event-hover">
 				<a title="Not going" href='../database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/no.png" height="90" width="90"></a>
 				<?php if($_SESSION['username'] === $event['host']) {?>
-				<a title="Edit" href=""><img src="../images/settings1.png" width="100" height="100"></a>
+				<a title="Edit" id="edit-event" href="#"><img src="../images/settings1.png" width="100" height="100"></a>
 				<?php } ?>
 			</div>
 			<?php
@@ -32,7 +32,7 @@
 			<div id="event-hover">
 				<a title="Going" href='../database/going.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/yes.png" height="100" width="100"></a>
 				<?php if($_SESSION['username'] === $event['host']) {?>
-				<a title="Edit" href=""><img src="../images/settings.png" width="100" height="100"></a>
+				<a title="Edit" id="edit-event" href="#"><img src="../images/settings.png" width="100" height="100"></a>
 				<?php } ?>
 			</div>
 			<?php } ?>
@@ -91,8 +91,8 @@
 				$avatar = getUserAvatarByUsername($comment['author']);
 		?>
 		<div class="comment-container">
-			<div class="username"><?php echo $comment['author']?> <a class="comment-date"><?php echo $comment['commentDate']?></a></div>
 			<div class="user-avatar" style="background: url('<?php echo $avatar ?>') 50% 50% no-repeat; background-size: cover;"></div>
+			<div class="username"><?php echo $comment['author']?> <a class="comment-date"><?php echo $comment['commentDate']?></a></div>
 			<div class="comment"><?php echo $comment['content']?></div>
 		</div>
 		<?php } ?>
@@ -102,6 +102,51 @@
 	<?php } else {?>
 	<div id="not-found">Event not found.</div>
 	<?php } ?>
+
+	<div id="dim"></div>
+
+	<div id="add-event-form">
+  		<div id="add-event-title">Add event</div><br><br>
+  		<div id="field-name">
+  			<ul>
+	  			<li>Event Name</li>
+	  			<li>Location</li>
+	  			<li>Type</li>
+	  			<li>Date/Time</li>
+	  			<li>Description</li>
+	  			<li>Event Photo</li>
+	  			<li>Private</li>
+	  		</ul>
+	  	</div>
+	  	<form id="data-field" action="" method="post" enctype="multipart/form-data">
+	  		<ul>
+		  		<li><input id="name" type="text" required="required" placeholder="Add a short, clear name"></li>
+		  		<li><input id="location" type="text" required="required" placeholder="Include a place or address"></li>
+		  		<li>
+		  			<select id="type">
+		  				<option value="Academic">Academic</option>
+		  				 <option value="Arts">Arts</option>
+					    <option value="Business">Business</option>
+					    <option value="Community">Community</option>
+					    <option value="Food & Drinks">Food & Drinks</option>
+					    <option value="Music">Music</option>
+					    <option value="Politics">Politics</option>
+					    <option value="Recreation">Recreation</option>
+					    <option value="Religion">Religion</option>
+					    <option value="Sports">Sports</option>
+					    <option value="Other">Other</option>
+		  			</select>
+		  		</li>
+		  		<li><input id="date" type="date" required="required" value="<?php echo date('Y-m-d'); ?>" >
+		  		<input id="time" type="time" required="required" value="<?php echo date('H:i'); ?>"></li>
+		  		<li><textarea id="description" rows="4" cols="50" placeholder="Tell people more about the event"></textarea></li>
+		  		<li><input id="photo" type="file" name="photo"></li>
+		  		<li><input id="private" type="checkbox"></li>
+	  		</ul>
+	  		<input id="create-button" type="submit" value="Create">
+	  		<input id="cancel-button" type="button" value="Cancel">
+	  	</form>
+  	</div>
 
 	<script type="text/javascript" src="scripts/addcomment.js"></script>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>

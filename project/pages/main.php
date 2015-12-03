@@ -60,8 +60,8 @@
   		<div onclick="location.href='../index.php?page=search&type=Recreation&filter=upcoming';" class="type-images" style='background: url("../images/Recreationevent.png") 50% 50% no-repeat;'>
   			<a href="../index.php?page=search&type=Recreation&filter=upcoming">Recreation</a>
   		</div>
-  		<div onclick="location.href='../index.php?page=search&type=Religious&filter=upcoming';" class="type-images" style='background: url("../images/religiousevent.png") 50% 50% no-repeat;'>
-  			<a href="../index.php?page=search&type=Religious&filter=upcoming">Religion</a>
+  		<div onclick="location.href='../index.php?page=search&type=Religion&filter=upcoming';" class="type-images" style='background: url("../images/religiousevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Religion&filter=upcoming">Religion</a>
   		</div>
   		<div onclick="location.href='../index.php?page=search&type=Sports&filter=upcoming';" class="type-images" style='background: url("../images/sportsevent.png") 50% 50% no-repeat;'>
   			<a href="../index.php?page=search&type=Sports&filter=upcoming">Sports</a>
