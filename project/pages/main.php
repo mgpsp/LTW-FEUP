@@ -17,7 +17,6 @@
 		?>
 		<div class="event-container">
 			<div class="event-banner" style='background: url("<?php echo $event['banner']?>") 50% 50% no-repeat; background-size: cover;'>
-				<div class="going-label"><img src="../images/goingLabel.png" height="50" width="50"></div>
 				<div class="event-hover">
 					<a title="Not going" href='../database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/no.png" height="26" width="26"></a>
 				</div>
@@ -33,18 +32,42 @@
   	<div id="upcoming-events-container">
   		<div id="all-events-title">What are you looking for?</div>
   		<div class="line-divisor"></div>
-  		<div class="type-images" style='background: url("../images/allevents.png") 50% 50% no-repeat;'><a href="">All</a></div>
-  		<div class="type-images" style='background: url("../images/academicevent.png") 50% 50% no-repeat;'><a href="">Academic</a></div>
-  		<div class="type-images" style='background: url("../images/artsevent.png") 50% 50% no-repeat;'><a href="">Arts</a></div>
-  		<div class="type-images" style='background: url("../images/businessevent.png") 50% 50% no-repeat;'><a href="">Business</a></div>
-  		<div class="type-images" style='background: url("../images/communityevent.png") 50% 50% no-repeat;'><a href="">Community</a></div>
-  		<div class="type-images" style='background: url("../images/eatingevent.png") 50% 50% no-repeat;'><a href="">Foods & Drinks</a></div>
-  		<div class="type-images" style='background: url("../images/musicevent.png") 50% 50% no-repeat;'><a href="">Music</a></div>
-  		<div class="type-images" style='background: url("../images/politicevent.png") 50% 50% no-repeat;'><a href="">Politics</a></div>
-  		<div class="type-images" style='background: url("../images/Recreationevent.png") 50% 50% no-repeat;'><a href="">Recreation</a></div>
-  		<div class="type-images" style='background: url("../images/religiousevent.png") 50% 50% no-repeat;'><a href="">Religion</a></div>
-  		<div class="type-images" style='background: url("../images/sportsevent.png") 50% 50% no-repeat;'><a href="">Sports</a></div>
-  		<div class="type-images" style='background: url("../images/otherevent.png") 50% 50% no-repeat;'><a href="">Other</a></div>
+  		<div onclick="location.href='../index.php?page=search&type=All';" class="type-images" style='background: url("../images/allevents.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=All">All</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Academic';" class="type-images" style='background: url("../images/academicevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Academic">Academic</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Arts';" class="type-images" style='background: url("../images/artsevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Arts">Arts</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Business';" class="type-images" style='background: url("../images/businessevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Business">Business</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Community';" class="type-images" style='background: url("../images/communityevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Community">Community</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Food%20%26%20Drinks';" class="type-images" style='background: url("../images/eatingevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Food%20%26%20Drinks">Food & Drinks</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Music';" class="type-images" style='background: url("../images/musicevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Music">Music</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Politics';" class="type-images" style='background: url("../images/politicevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Politics">Politics</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Recreation';" class="type-images" style='background: url("../images/Recreationevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Recreation">Recreation</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Religious';" class="type-images" style='background: url("../images/religiousevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Religious">Religion</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Sports';" class="type-images" style='background: url("../images/sportsevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Sports">Sports</a>
+  		</div>
+  		<div onclick="location.href='../index.php?page=search&type=Other';" class="type-images" style='background: url("../images/otherevent.png") 50% 50% no-repeat;'>
+  			<a href="../index.php?page=search&type=Other">Other</a>
+  		</div>
   	</div>
 
   	<script type="text/javascript" src="scripts/addevent.js"></script>

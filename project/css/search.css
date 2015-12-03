@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('../fonts/ProximaNova-Light.otf');
+}
+
+#events-container {
+	width: 54%;
+	height: 345px;
+	position: relative;
+	left: 23%;
+	margin-top: 25px;
+}
+
+#search-title {
+	color: #DFE0E6;
+	font-family: 'Proxima Nova Light';
+	font-size: 32px;
+}
+
+.no-events {
+	position: absolute;
+	color: #DFE0E6;
+	font-family: 'Proxima Nova Light';
+	text-align: center;
+	font-size: 25px;
+	top: 115px;
+	left: 41%;
+}

@@ -48,4 +48,11 @@ window.onload = function() {
 		$('#dim').fadeOut(200);
 		$('#add-event-form').fadeOut(200);
 	})
+
+	$('#search-box').keydown(function(e) {
+	    if (e.keyCode == 13) {
+	    	$("#search-bar").attr("action", "../index.php?page=search&val=" + $('#search-box').val());
+	        $('#search-bar').submit();
+    }
+});
 }

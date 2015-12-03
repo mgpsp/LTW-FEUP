@@ -33,7 +33,20 @@
 			<div id="event-name"><?php echo $event['name']?></div>
 		</div>
 
-		<div id="going-info">Quem vai e tal.</div>
+		<div id="going-info">
+			<div id="going-avatars">
+			<?php
+				$goings = getGoings($event_id);
+				if (!empty($goings)) {
+					foreach ($goings as $going) {
+						$user = getUserByID($going['userID']);
+			?>
+				<div class="going-avatar" style="background: url('<?php echo $user['avatar'] ?>') 50% 50% no-repeat; background-size: cover;" title="<?php echo $user['username'] ?>"></div>
+			<?php } }?>
+			</div>
+			<div class="line-divisor"></div>
+			<div id="going-number"><?php echo count($goings) ?> going</div>
+		</div>
 
 		<div id="event-info">
 			<div id="event-type">
@@ -41,7 +54,7 @@
 			</div>
 			<ul>
 				<li>
-					<?php if($event['private']) {?>
+					<?php if($event['private'] === true) {?>
 						<img src="../images/private.png" height="12" width="12" title="Private">
 					<?php } else { ?>
 						<img src="../images/public.png" height="12" width="12" title="Public">
@@ -69,7 +82,7 @@
 		<div id="no-comments">Be the first to comment on this event.</div>
 		<?php } else
 			foreach ($comments as $comment) {
-				$avatar = getUserAvatar($comment['author']);
+				$avatar = getUserAvatarByUsername($comment['author']);
 		?>
 		<div class="comment-container">
 			<div class="username"><?php echo $comment['author']?> <a class="comment-date"><?php echo $comment['commentDate']?></a></div>
