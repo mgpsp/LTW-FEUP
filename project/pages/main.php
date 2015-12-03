@@ -24,8 +24,8 @@
 			</div>
 			<div class="event-type"><img src="../images/<?php echo $event['type']?>.png" height="19" width="19" title="<?php echo $event['type']?>"></div>
 			<div class="event-date"><?php echo strtoupper(date("D, j M H:i", strtotime($event['eventDate'])))?></div>
-			<div class="event-name"><a href="../index.php?page=event&id=<?php echo $event['eventID'] ?>"><?php echo $event['name'] ?></a></div>
-			<div class="event-location"><?php echo $event['location'] ?></div>
+			<div class="event-name"><a title="<?php echo $event['name'] ?>" href="../index.php?page=event&id=<?php echo $event['eventID'] ?>"><?php echo $event['name'] ?></a></div>
+			<div class="event-location" title="<?php echo $event['location'] ?>"><?php echo $event['location'] ?></div>
 		</div>
 		<?php } ?>
   	</div>

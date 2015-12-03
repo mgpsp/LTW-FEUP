@@ -10,8 +10,7 @@
 
 #user-upcoming-events-container {
 	width: 54%;
-	height: auto;
-	min-height: 280px;
+	height: 345px;
 	position: relative;
 	left: 23%;
 	margin-top: 25px;
@@ -126,7 +125,7 @@
 }
 
 .event-name {
-	white-space: normal;
+	white-space: nowrap;
 	overflow: hidden;
 }
 
@@ -138,6 +137,8 @@
 	height: 34px;
 	overflow: hidden;
 	text-decoration: none;
+	display: block;
+	text-overflow: ellipsis;
 }
 .event-name a:hover {
 	text-decoration: underline;
@@ -148,7 +149,7 @@
 	font-size: 14px;
 	color: #88898C;
 	padding-left: 7px;
-	padding-top: 21px;
+	padding-top: 7px;
 	padding-right: 7px;
 	overflow: hidden;
 	text-overflow: ellipsis;

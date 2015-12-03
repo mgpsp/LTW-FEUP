@@ -20,7 +20,10 @@
 			?>
 			<div id="going-label" style="visibility: visible;"><img src="../images/goingLabel.png" height="120" width="120"></div>
 			<div id="event-hover">
-				<a title="Not going" href='../database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/no.png" height="85" width="85"></a>
+				<a title="Not going" href='../database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/no.png" height="90" width="90"></a>
+				<?php if($_SESSION['username'] === $event['host']) {?>
+				<a title="Edit" href=""><img src="../images/settings1.png" width="100" height="100"></a>
+				<?php } ?>
 			</div>
 			<?php
 				} else {
@@ -28,6 +31,9 @@
 			<div id="going-label" style="visibility: hidden;"><img src="../images/goingLabel.png" height="120" width="120"></div>
 			<div id="event-hover">
 				<a title="Going" href='../database/going.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/yes.png" height="100" width="100"></a>
+				<?php if($_SESSION['username'] === $event['host']) {?>
+				<a title="Edit" href=""><img src="../images/settings.png" width="100" height="100"></a>
+				<?php } ?>
 			</div>
 			<?php } ?>
 			<div id="event-name"><?php echo $event['name']?></div>
