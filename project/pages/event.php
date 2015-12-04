@@ -22,7 +22,10 @@
 			<div id="event-hover">
 				<a title="Not going" href='../database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/no.png" height="90" width="90"></a>
 				<?php if($_SESSION['username'] === $event['host']) {?>
-				<a title="Edit" id="edit-event" href="#"><img src="../images/settings1.png" width="100" height="100"></a>
+				<a title="Edit" id="edit-event" href="#"><img src="../images/settings.png" width="100" height="100"></a>
+				<script type="text/javascript" src="scripts/editevent.js"></script>
+				<?php } else {?>
+				<div id="edit-event"></div>
 				<?php } ?>
 			</div>
 			<?php
@@ -33,6 +36,7 @@
 				<a title="Going" href='../database/going.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="../images/yes.png" height="100" width="100"></a>
 				<?php if($_SESSION['username'] === $event['host']) {?>
 				<a title="Edit" id="edit-event" href="#"><img src="../images/settings.png" width="100" height="100"></a>
+				<script type="text/javascript" src="scripts/editevent.js"></script>
 				<?php } ?>
 			</div>
 			<?php } ?>
@@ -60,7 +64,7 @@
 			</div>
 			<ul>
 				<li>
-					<?php if($event['private'] === true) {?>
+					<?php if($event['private']) {?>
 						<img src="../images/private.png" height="12" width="12" title="Private">
 					<?php } else { ?>
 						<img src="../images/public.png" height="12" width="12" title="Public">
@@ -70,7 +74,7 @@
 				<li><img src="../images/clock.png" height="12" width="12" title="Date"> <?php echo date("l, F jS \a\\t H:i", strtotime($event['eventDate']))?></li>
 				<li><img src="../images/location.png" height="12" width="12" title="Location"> <?php echo $event['location']?></li>
 				<div class="line-divisor"></div>
-				<li><?php echo $event['description']?></li>
+				<li><?php echo nl2br($event['description'])?></li>
 			</ul>
 		</div>
 
@@ -91,6 +95,9 @@
 				$avatar = getUserAvatarByUsername($comment['author']);
 		?>
 		<div class="comment-container">
+			<?php if ($_SESSION['username'] == $comment['author']) { ?>
+			<div class="delete-comment"><a href="../database/deletecomment.php?id=<?php echo $comment['commentID']?>&author=<?php echo $comment['author']?>"><img title="Delete comment" src="../images/delete.png" width="10" height="10"></a></div>
+			<?php } ?>
 			<div class="user-avatar" style="background: url('<?php echo $avatar ?>') 50% 50% no-repeat; background-size: cover;"></div>
 			<div class="username"><?php echo $comment['author']?> <a class="comment-date"><?php echo $comment['commentDate']?></a></div>
 			<div class="comment"><?php echo $comment['content']?></div>
@@ -103,11 +110,9 @@
 	<div id="not-found">Event not found.</div>
 	<?php } ?>
 
-	<div id="dim"></div>
-
-	<div id="add-event-form">
-  		<div id="add-event-title">Add event</div><br><br>
-  		<div id="field-name">
+	<div id="edit-event-form">
+  		<div id="edit-event-title">Edit event</div><br><br>
+  		<div id="field-name-edit">
   			<ul>
 	  			<li>Event Name</li>
 	  			<li>Location</li>
@@ -118,34 +123,37 @@
 	  			<li>Private</li>
 	  		</ul>
 	  	</div>
-	  	<form id="data-field" action="" method="post" enctype="multipart/form-data">
+	  	<form id="data-field-edit" action="" method="post" enctype="multipart/form-data">
 	  		<ul>
-		  		<li><input id="name" type="text" required="required" placeholder="Add a short, clear name"></li>
-		  		<li><input id="location" type="text" required="required" placeholder="Include a place or address"></li>
+	  			<input id="event-id" type="hidden" value="<?php echo $event['eventID']?>">
+		  		<li><input id="name-edit" type="text" required="required" placeholder="Add a short, clear name" value="<?php echo $event['name']?>"></li>
+		  		<li><input id="location-edit" type="text" required="required" placeholder="Include a place or address" value="<?php echo $event['location']?>"></li>
 		  		<li>
-		  			<select id="type">
-		  				<option value="Academic">Academic</option>
-		  				 <option value="Arts">Arts</option>
-					    <option value="Business">Business</option>
-					    <option value="Community">Community</option>
-					    <option value="Food & Drinks">Food & Drinks</option>
-					    <option value="Music">Music</option>
-					    <option value="Politics">Politics</option>
-					    <option value="Recreation">Recreation</option>
-					    <option value="Religion">Religion</option>
-					    <option value="Sports">Sports</option>
-					    <option value="Other">Other</option>
+		  			<select id="type-edit">
+		  				<?php
+		  					$types = array("Academic", "Arts", "Business", "Community", "Food & Drinks", "Music", "Politics", "Recreation", "Religion", "Sports", "Other");
+		  					foreach($types as $type) {
+		  						if ($type != $event['type']) {?>
+		  						<option value="<?php echo $type?>"><?php echo $type?></option>
+		  						<?php } else {?>
+		  							<option selected="selected" value="<?php echo $type?>"><?php echo $type?></option>
+		  						<?php } }?>
 		  			</select>
 		  		</li>
-		  		<li><input id="date" type="date" required="required" value="<?php echo date('Y-m-d'); ?>" >
-		  		<input id="time" type="time" required="required" value="<?php echo date('H:i'); ?>"></li>
-		  		<li><textarea id="description" rows="4" cols="50" placeholder="Tell people more about the event"></textarea></li>
-		  		<li><input id="photo" type="file" name="photo"></li>
-		  		<li><input id="private" type="checkbox"></li>
+		  		<li><input id="date-edit" type="date" required="required" value="<?php echo date("Y-m-d", strtotime($event['eventDate']))?>" >
+		  		<input id="time-edit" type="time" required="required" value="<?php echo date('H:i', strtotime($event['eventDate'])); ?>"></li>
+		  		<li><textarea id="description-edit" rows="4" cols="50" placeholder="Tell people more about the event"><?php echo $event['description']?></textarea></li>
+		  		<li><input id="photo-edit" type="file" name="photo-edit"></li>
+		  		<?php if ($event['private']) {?>
+		  			<li><input id="private-edit" type="checkbox" value="" checked></li>
+		  		<?php } else { ?>
+		  			<li><input id="private-edit" type="checkbox" value=""></li>
+		  		<?php } ?>
 	  		</ul>
-	  		<input id="create-button" type="submit" value="Create">
-	  		<input id="cancel-button" type="button" value="Cancel">
+	  		<input id="edit-button" type="submit" value="Save">
+	  		<input id="cancel-button-edit" type="button" value="Cancel">
 	  	</form>
+	  	<a href="../database/deleteevent.php?id=<?php echo $event['eventID']?>&host=<?php echo $event['host']?>">Delete event</a>
   	</div>
 
 	<script type="text/javascript" src="scripts/addcomment.js"></script>

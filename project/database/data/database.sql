@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS Comments;
 CREATE TABLE Comments (
 	commentID INTEGER PRIMARY KEY AUTOINCREMENT,
 	content TEXT NOT NULL,
-	eventID INTEGER REFERENCES Events(eventID),
+	eventID INTEGER REFERENCES Events(eventID) ON DELETE CASCADE,
 	author TEXT NOT NULL,
 	commentDate TEXT DEFAULT (datetime('now','localtime'))
 );

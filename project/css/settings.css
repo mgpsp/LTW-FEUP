@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('../fonts/ProximaNova-Light.otf');
+}
+
+#settings-container {
+	width: 54%;
+	height: 345px;
+	position: relative;
+	left: 23%;
+	margin-top: 25px;
+	z-index: 3;
+}
+
+#settings {
+	font-family: 'Proxima Nova Light';
+	color: #DFE0E6;
+	font-size: 15px;
+}
+
+#avatar {
+	background: url("../images/avatares/martalopes.jpg") 50% 50% no-repeat;
+	background-size: cover;
+	border-radius: 50%;
+	height: 150px;
+	width: 150px;
+	float: left;
+}
+
+#upload-avatar {
+	float: left;
+	margin-top: 65px;
+	margin-left: 15px;
+}

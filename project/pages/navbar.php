@@ -4,8 +4,8 @@
 			<input id="search-box" type="text" placeholder="Search">
 		</form>
 		<a id="logout-button" href="../database/logout.php"><img  src="../images/logout.png" alt="Logout" height="15" width="15" title="Logout"></a>
-		<a id="username" href="#"><img  src="../images/user.png" alt="Logout" height="15" width="15"> <?= $_SESSION['username'] ?></a>
-		<div id="add-event-button"><img  src="../images/addEvent.png" alt="Logout" height="13" width="13"> Add event</div>
+		<a id="username" href="#"><img src="../images/user.png" alt="Logout" height="15" width="15"> <?= $_SESSION['username'] ?></a>
+		<div id="add-event-button"><img src="../images/addEvent.png" alt="Logout" height="13" width="13"> Add event</div>
   	</div>
 
   	<div id="dim"></div>
