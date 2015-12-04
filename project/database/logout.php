@@ -1,4 +1,5 @@
 <?php
-	session_destroy();
-	header("Location: ../index.php?page=signIn");
+	session_start();
+	if (session_destroy())
+		header("Location: ../index.php");
 ?>

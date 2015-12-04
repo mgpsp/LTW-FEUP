@@ -15,6 +15,7 @@
 		$_SESSION['username'] = $username;
 		$_SESSION['userID'] = $result['userID'];
 		$_SESSION['avatar'] = $result['avatar'];
+		$_SESSION['email'] = $result['email'];
 		echo "true";
 	}
 ?>

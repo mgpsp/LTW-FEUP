@@ -44,6 +44,7 @@ window.onload = function() {
 		    contentType: false,
 		    processData: false,
 		    success: function(r) {
+		    	window.location.reload();
         	}
 		})
 		
@@ -88,6 +89,7 @@ window.onload = function() {
 		    contentType: false,
 		    processData: false,
 		    success: function(r) {
+		    	window.location.reload();
         	}
 		})
 		

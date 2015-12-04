@@ -13,7 +13,7 @@
 	height: 345px;
 	position: relative;
 	left: 23%;
-	margin-top: 25px;
+	margin-top: 45px;
 	z-index: 3;
 }
 
@@ -30,7 +30,7 @@
 	height: 150px;
 	width: 150px;
 	position: relative;
-	left: 40%;
+	left: 42.5%;
 }
 
 #avatar-hover {
@@ -66,13 +66,14 @@
 	display: none;
 }
 
-#change-username {
+#change-username, #change-email, #change-password {
 	position: relative;
-	width: 435px;
+	left: 27%;
+	width: 460px;
 	height: 40px;
-	margin-top: 39px;
-	font-size: 32px;
+	font-size: 28px;
 	padding-left: 10px;
+	padding-right: 10px;
 	padding-top: 3px;
 	padding-bottom: 3px;
 	background-color: #121314;
@@ -80,8 +81,36 @@
 	outline: none;
 	color: #DFE0E6;
 	font-family: 'Proxima Nova Light';
+	text-align: center;
 }
 
-#change-username:focus {
+#change-username {
+	margin-top: 28px;
+}
+
+#change-email, #change-password {
+	margin-top: 5px;
+}
+
+#change-username:focus, #change-email:focus, #change-password:focus {
+	background-color: #38383b;
+}
+
+#save-button {
+	position: relative;
+	left: 44%;
+	width: 100px;
+	height: 43px;
+	margin-top: 12px;
+	font-family: 'Proxima Nova Light';
+	font-size: 28px;
+	background-color: #121314;
+	color: #DFE0E6;
+	border: none;
+	outline: none;
+}
+
+#save-button:hover {
+	cursor: pointer;
 	background-color: #38383b;
 }

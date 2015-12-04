@@ -10,7 +10,7 @@
 	$loginRequired = array('main', 'event', 'search', 'userevents', 'settings');
 
 	foreach ($loginRequired as $page) {
-		if ($redirectTo === $page && $_SESSION['username'] === null) {
+		if ($redirectTo == $page && $_SESSION['username'] == null) {
 			$redirectTo = 'signIn';
 			break;
 		}

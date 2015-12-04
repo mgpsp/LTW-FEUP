@@ -12,6 +12,7 @@
 	if ($stmt->fetch()) {
 		$_SESSION['username'] = null;
 		$_SESSION['userID'] = null;
+		$_SESSION['email'] = null;
 		echo "false";
 	}
 	else {
@@ -24,6 +25,7 @@
 		$result = $stmt->fetch();
 		$_SESSION['userID'] = $result['userID'];
 		$_SESSION['avatar'] = $result['avatar'];
+		$_SESSION['email'] = $result['email'];
 		echo "true";
 	}
 ?>
