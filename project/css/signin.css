@@ -93,6 +93,7 @@ body {
 	font-weight: 400;
 	font-family: 'Proxima Nova';
 	border: solid 1px #F6F6F6;
+	outline: none;
 }
 
 .username-field {

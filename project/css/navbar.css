@@ -233,14 +233,14 @@ html, body {
 	padding-bottom: 7px;
 }
 
-#name, #location, #date, #time, #description, #type, #name-edit, #location-edit, #date-edit, #time-edit, #description-edit, #type-edit {
+#name, #location-add, #date, #time, #description, #type, #name-edit, #location-edit, #date-edit, #time-edit, #description-edit, #type-edit {
 	padding-left: 7px;
 	font-family: 'Proxima Nova';
 	border: none;
 	border-radius: 2px;
 }
 
-#name, #location, #type, #name-edit, #location-edit, #type-edit {
+#name, #location-add, #type, #name-edit, #location-edit, #type-edit {
 	height: 27px;
 	width: 380px;
 }

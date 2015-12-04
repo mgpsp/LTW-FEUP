@@ -3,7 +3,7 @@
 	include_once('connection.php');
 	
 	$username = $_POST["username"];
-	$password = $_POST["password"];
+	$password = hash('sha256', $_POST["password"]);
 	$stmt = $db->prepare('SELECT * FROM Users WHERE username = ? AND password = ?');
 	$stmt->execute(array($username, $password));
 

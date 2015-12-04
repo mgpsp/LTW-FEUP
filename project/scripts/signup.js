@@ -52,7 +52,7 @@ document.getElementById("register-button").onclick = function () {
 		"password" : password.value
 	};
 
-	var register = $.post("../database/register.php", formData);
+	var register = $.post("database/register.php", formData);
 
 	register.done(function(data) {
 		var elm = document.getElementById("register-failed");

@@ -3,7 +3,7 @@
 	include_once('connection.php');
 	
 	$username = htmlspecialchars($_POST["username"], ENT_QUOTES);
-	$password = htmlspecialchars($_POST["password"], ENT_QUOTES);
+	$password = hash('sha256', htmlspecialchars($_POST["password"], ENT_QUOTES));
 	$email = htmlspecialchars($_POST["email"], ENT_QUOTES);
 
 	$stmt = $db->prepare('SELECT * FROM Users WHERE username = ? OR email = ?');
@@ -17,7 +17,7 @@
 	}
 	else {
 		$stmt = $db->prepare('INSERT INTO Users (username, password, email, avatar) VALUES (?, ?, ?, ?)');
-		$stmt->execute(array($username, $password, $email, "../images/avatares/default.png"));
+		$stmt->execute(array($username, $password, $email, "images/avatares/default.png"));
 		$_SESSION['username'] = $username;
 
 		$stmt = $db->prepare('SELECT * FROM Users WHERE username = ? AND password = ?');

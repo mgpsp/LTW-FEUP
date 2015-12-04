@@ -20,8 +20,8 @@
 	else {
 		$image_name = uniqid() . "-" . $_FILES["photo"]["name"];
 		$tmp_name = $_FILES["photo"]["tmp_name"];
-		$image = "$uploads_dir/$image_name";
-	    move_uploaded_file($tmp_name, $image);
+		$image = "images/uploads/$image_name";
+	    move_uploaded_file($tmp_name, "$uploads_dir/$image_name");
 	}		
 
 	$stmt = $db->prepare('UPDATE Events SET banner = ?, name = ?, description = ?, eventDate = ?, location = ?, private = ?, type = ? WHERE eventID = ?');

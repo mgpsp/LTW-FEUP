@@ -13,13 +13,14 @@
 	$uploads_dir = "../images/uploads";
 	if ($_FILES["photo"]["name"] === null)
 		$image_name = "eventBanner.png";
-	else
+	else {
 		$image_name = uniqid() . "-" . $_FILES["photo"]["name"];
-	$tmp_name = $_FILES["photo"]["tmp_name"];
-    move_uploaded_file($tmp_name, "$uploads_dir/$image_name");
+		$tmp_name = $_FILES["photo"]["tmp_name"];
+    	move_uploaded_file($tmp_name, "$uploads_dir/$image_name");
+	}
 
 	$stmt = $db->prepare('INSERT INTO Events (host, banner, name, eventDate, location, description, private, type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
-	$stmt->execute(array($host, "$uploads_dir/$image_name", $name, $eventDate, $location, $description, $private, $type));
+	$stmt->execute(array($host, "images/uploads/$image_name", $name, $eventDate, $location, $description, $private, $type));
 
 	$event_id = $db->lastInsertId();
 

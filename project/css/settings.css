@@ -24,8 +24,6 @@
 }
 
 #avatar {
-	background: url("../images/avatares/martalopes.jpg") 50% 50% no-repeat;
-	background-size: cover;
 	border-radius: 50%;
 	height: 150px;
 	width: 150px;
@@ -98,7 +96,7 @@
 
 #save-button {
 	position: relative;
-	left: 44%;
+	left: 45%;
 	width: 100px;
 	height: 43px;
 	margin-top: 12px;

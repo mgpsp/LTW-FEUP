@@ -37,7 +37,7 @@ document.getElementById("login-button").onclick = function() {
 		"password" : password.value
 	};
 
-	var login = $.post("../database/login.php", formData);
+	var login = $.post("database/login.php", formData);
 
 	login.done(function(data)  {
 		var elm = document.getElementById("login-failed");
