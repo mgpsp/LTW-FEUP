@@ -70,9 +70,8 @@
 					$upcoming_events[] = $event;
 				}
 			}
+			usort($upcoming_events, "sortFunction");
 		}
-		
-		usort($upcoming_events, "sortFunction");
 
 		return $upcoming_events;
 	}

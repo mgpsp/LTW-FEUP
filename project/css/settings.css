@@ -29,11 +29,59 @@
 	border-radius: 50%;
 	height: 150px;
 	width: 150px;
-	float: left;
+	position: relative;
+	left: 40%;
+}
+
+#avatar-hover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	text-align: center;
+	visibility: hidden;
+}
+
+#avatar:hover #avatar-hover {
+	background-color: rgba(0, 0, 0, 0.7);
+	visibility: visible;
+}
+
+#avatar-hover img {
+	position: relative;
+	top: 38.9%;
+	margin-left: 30px;
+	margin-right: 30px;
+	cursor: pointer;
+}
+
+#avatar-hover img:hover {
+	-webkit-filter: brightness(180%);
+	filter: brightness(180%);
 }
 
 #upload-avatar {
-	float: left;
-	margin-top: 65px;
-	margin-left: 15px;
+	display: none;
+}
+
+#change-username {
+	position: relative;
+	width: 435px;
+	height: 40px;
+	margin-top: 39px;
+	font-size: 32px;
+	padding-left: 10px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-color: #121314;
+	border: none;
+	outline: none;
+	color: #DFE0E6;
+	font-family: 'Proxima Nova Light';
+}
+
+#change-username:focus {
+	background-color: #38383b;
 }

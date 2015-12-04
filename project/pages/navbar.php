@@ -30,7 +30,7 @@
 		  		<li>
 		  			<select id="type">
 		  				<option value="Academic">Academic</option>
-		  				 <option value="Arts">Arts</option>
+		  				<option value="Arts">Arts</option>
 					    <option value="Business">Business</option>
 					    <option value="Community">Community</option>
 					    <option value="Food & Drinks">Food & Drinks</option>

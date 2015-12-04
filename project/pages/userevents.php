@@ -11,7 +11,7 @@
 
 	<div class="events-container">
 		<?php if (isset($filter)) {
-			if ($filter === "past") {
+			if ($filter == "past") {
 				$events = getUserPastEvents();
 		?>
 			<div class="title"><?= $_SESSION['username'] ?>'s past events</div>
