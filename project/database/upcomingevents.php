@@ -9,10 +9,10 @@
 	    return strtotime($a['eventDate']) - strtotime($b['eventDate']);
 	}
 
-	function getUserUpcomingEvents() {
+	function getUserUpcomingEvents($user_id) {
 		global $db;
 		$stmt = $db->prepare('SELECT * FROM EventGuests WHERE userID = ? AND status = ?');
-		$stmt->execute(array($_SESSION['userID'], "going"));
+		$stmt->execute(array($user_id, "going"));
 		$events = $stmt->fetchAll();
 
 	  	$upcoming_events = array();

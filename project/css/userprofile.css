@@ -8,37 +8,26 @@
   src: url('../fonts/ProximaNova-Light.otf');
 }
 
-#user-upcoming-events-container {
+#user-going-events{
+	margin-top: 220px;
+}
+
+#user-hosted-events{
+	margin-top: 25px;
+}
+
+#user-going-events, #user-hosted-events {
 	width: 54%;
 	height: 345px;
 	position: relative;
 	left: 23%;
-	margin-top: 25px;
 	z-index: 3;
 }
 
-#upcoming-events-title, #all-events-title {
+#going-events-title, #hosted-events-title{
 	color: #DFE0E6;
 	font-family: 'Proxima Nova Light';
 	font-size: 32px;
-}
-
-#title-right a{
-	color: #9fa0a3;
-	font-family: 'Proxima Nova Light';
-	float: right;
-	margin-top: 17px;
-	margin-bottom: 0;
-	font-size: 15px;
-	text-decoration: none;
-}
-
-#title-right a:not(:first-child) {
-	margin-right: 12px;
-}
-
-#title-right a:hover{
-	text-decoration: underline;
 }
 
 .no-upcoming-events {
@@ -51,7 +40,39 @@
 	left: 33%;
 }
 
-.line-divisor {
+#useravatar {
+	float:left;
+	border-radius: 50%;
+	margin-top: 30px;
+	height: 150px;
+	width: 150px;
+	position: relative;
+	left: 23%;
+}
+
+#user {
+	float:left;
+	margin-top:63px;
+	left: 24%;
+	height: 150px;
+	width: 150px;
+	position: relative;
+}
+
+#user_name {
+	color: #DFE0E6;
+	font-family: 'Proxima Nova Light';
+	font-size: 38px;
+}
+
+#user_text {
+	color: #6f7073;
+	font-family: 'Proxima Nova Light';
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+.linedivisor {
 	background-color: #1A1B1D;
 	width: 100%;
 	height: 2px;
@@ -59,7 +80,7 @@
 	margin-bottom: 17px;
 }
 
-.event-container {
+.user-event-container{
 	position: relative;
 	background-color: #222326;
 	width: 23.5%;
@@ -68,20 +89,20 @@
 	float: left;
 }
 
-.event-container:nth-child(n+7) {
+.user-event-container:nth-child(n+7) {
 	margin-top: 17px;
 }
 
-.event-container:not(:nth-child(4n+2)) {
+.user-event-container:not(:nth-child(4n+2)) {
 	margin-right: 20px;
 }
 
-.event-banner {
+.user-event-banner {
 	width: 100%;
 	height: 170px;
 }
 
-.event-hover {
+.user-event-hover {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -91,31 +112,31 @@
 	visibility: hidden;
 }
 
-.event-banner:hover .event-hover{
+.user-event-banner:hover .user-event-hover{
 	background-color: rgba(0, 0, 0, 0.8);
 	visibility: visible;
 }
 
-.event-hover img {
+.user-event-hover img {
 	position: relative;
 	top: 41%;
 	margin-left: 30px;
 	margin-right: 30px;
 }
 
-.event-hover img:hover {
+.user-event-hover img:hover {
 	-webkit-filter: brightness(180%);
 	filter: brightness(180%);
 }
 
-.event-type {
+.user-event-type {
 	position: absolute;
 	float: right;
 	margin-left: 215px;
 	margin-top: 10px;
 }
 
-.event-date {
+.user-event-date {
 	font-family: 'Proxima Nova Light';
 	font-size: 14px;
 	color: #88898C;
@@ -124,12 +145,12 @@
 
 }
 
-.event-name {
+.user-event-name {
 	white-space: nowrap;
 	overflow: hidden;
 }
 
-.event-name a {
+.user-event-name a {
 	font-size: 16px;
 	padding-left: 7px;
 	padding-right: 7px;
@@ -140,11 +161,11 @@
 	display: block;
 	text-overflow: ellipsis;
 }
-.event-name a:hover {
+.user-event-name a:hover {
 	text-decoration: underline;
 }
 
-.event-location {
+.user-event-location {
 	font-family: 'Proxima Nova Light';
 	font-size: 14px;
 	color: #88898C;
@@ -153,47 +174,4 @@
 	padding-right: 7px;
 	overflow: hidden;
 	text-overflow: ellipsis;
-}
-
-#upcoming-events-container {
-	width: 54%;
-	height: 345px;
-	position: relative;
-	left: 23%;
-	margin-top: 17px;
-	z-index: 3;
-	margin-bottom: 26%;
-	min-width: 1040px;
-}
-
-.type-images {
-	position: relative;
-	float: left;
-	background-size: contain;
-	width: 241.9px;
-	height: 241.9px;
-	text-align: center;
-	cursor: pointer;
-}
-
-.type-images:nth-child(n+7) {
-	margin-top: 17px;
-}
-
-.type-images:not(:nth-child(4n+2)) {
-	margin-right: 20px;
-}
-
-.type-images a {
-	font-family: 'Proxima Nova Light';
-	font-size: 19px;
-	text-decoration: none;
-	color: white;
-	display:inline-block;
-	margin-top: 165px;
-	text-shadow: 2px 2px 6px rgba(0, 0, 0, 1);
-}
-
-.type-images:hover a {
-	text-decoration: underline;
 }

@@ -270,13 +270,22 @@
 	left: 50%;
 }
 
-.username {
+.username{
 	font-family: 'Proxima Nova';
 	font-size: 18px;
 	position: relative;
 	left: 2.2%;
 	float: left;
 	margin-top: 4px;
+	text-decoration: none;
+}
+
+.username a{
+	color: #DFE0E6;
+	text-decoration: none;
+}
+.username a:hover:not(.comment-date){
+	text-decoration: underline;
 }
 
 .comment-date {

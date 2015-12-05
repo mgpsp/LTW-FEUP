@@ -51,6 +51,11 @@
 		case 'settings':
 			include('pages/settings.php');
 			break;
+		case 'profile':
+			if (isset($_GET['userid']))
+				$userid=$_GET['userid'];
+			include('pages/userprofile.php');
+			break;
 		default:
 			include('pages/signin.php');
 			break;

@@ -88,12 +88,11 @@
 		return $stmt->fetchAll();
 	}
 
-	function getUserAvatarByUsername($username) {
+	function getUserByUsername($username) {
 		global $db;
 		$stmt = $db->prepare('SELECT * FROM Users WHERE username = ?');
 		$stmt->execute(array($username));
-		$result = $stmt->fetch();
-		return $result['avatar'];
+		return $stmt->fetch();
 	}
 
 	function getUserByID($user_id) {
@@ -107,6 +106,21 @@
 		global $db;
 		$stmt = $db->prepare('SELECT * FROM EventGuests WHERE eventID = ? AND status = ?');
 		$stmt->execute(array($event_id, "going"));
+		return $stmt->fetchAll();
+	}
+
+	function getUsernameByID($user_id) {
+		global $db;
+		$stmt = $db->prepare('SELECT * FROM Users WHERE userID = ?');
+		$stmt->execute(array($user_id));
+		$result = $stmt->fetch();
+		return $result['username'];
+	}
+
+	function getEventsbyHost($userid) {
+		global $db;
+		$stmt = $db->prepare('SELECT * FROM Events WHERE host = ?');
+		$stmt->execute(array($userid));
 		return $stmt->fetchAll();
 	}
 ?>

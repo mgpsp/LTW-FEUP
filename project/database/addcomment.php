@@ -2,7 +2,7 @@
 	session_start();
 	include_once('connection.php');
 	
-	$author = $_SESSION['username'];
+	$author = $_SESSION['userID'];
 	$event_id = $_POST["event-id"];
 	$content = htmlspecialchars($_POST["comment-box"], ENT_QUOTES);
 

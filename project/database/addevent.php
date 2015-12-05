@@ -8,7 +8,7 @@
 	$eventDate = htmlspecialchars($_POST["datetime"], ENT_QUOTES);
 	$description = trim(htmlspecialchars($_POST["description"], ENT_QUOTES));
 	$private = $_POST["private"];
-	$host = $_SESSION['username'];
+	$host = $_SESSION['userID'];
 
 	$uploads_dir = "../images/uploads";
 	if ($_FILES["photo"]["name"] === null)

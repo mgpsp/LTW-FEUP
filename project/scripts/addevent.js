@@ -18,6 +18,35 @@ $(document).ready(function()
 	        $('#search-bar').submit();
     	}
 	});
+
+	$('#username').hover(function() {
+		var hover = $('#block-hover').is(":hover");
+		if(!hover)
+			$('#dropdown-menu').fadeIn(200);
+	}, function() {
+		var hover = $('#block-hover').is(":hover");
+		if (!hover)
+			$('#dropdown-menu').fadeOut(200);
+	});
+
+	$('#block-hover').hover(function() {
+		$('#dropdown-menu').fadeIn(200);
+	}, function() {
+		var hoverDrop = $('#dropdown-menu').is(":hover");
+		var hoveUser = $('#username').is(":hover");
+		if (!hoverDrop && !hoverUser)
+			$('#dropdown-menu').fadeOut(200);
+	});
+
+	$('#dropdown-menu').hover(function() {
+		var hover = $('#block-hover').is(":hover");
+		if (!hover)
+			$('#dropdown-menu').fadeIn(200);
+	}, function() {
+		var hover = $('#block-hover').is(":hover");
+		if (!hover)
+			$('#dropdown-menu').fadeOut(200);
+	});
 });
 
 function create_event() {

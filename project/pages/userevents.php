@@ -17,7 +17,7 @@
 			<div class="title"><?= $_SESSION['username'] ?>'s past events</div>
 		<?php } else { ?>
 			<div class="title"><?= $_SESSION['username'] ?>'s upcoming events</div>
-		<?php $events = getUserUpcomingEvents(); } }?>
+		<?php $events = getUserUpcomingEvents($_SESSION['userID']); } }?>
 		<div class="line-divisor"></div>
 		<?php
 			if (empty($events))

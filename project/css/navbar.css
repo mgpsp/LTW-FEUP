@@ -48,7 +48,6 @@ html, body {
  	width: 100%;
 	background-color: #1C1C1F;
 	height: 65px;
-	overflow: hidden;
 	z-index: 1000;
 	box-shadow: 0px 0px 5px black;
 }
@@ -294,4 +293,79 @@ html, body {
 	background: -o-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
 	background: -ms-linear-gradient(top,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
 	background: linear-gradient(to bottom,  rgba(216, 216, 216, 1) 0%,rgba(198, 198, 198, 1) 100%);
+}
+
+#dropdown-menu {
+	position: absolute;
+	top: 55px;
+	left: 1340px;
+  	margin-left: auto;
+  	margin-right: auto;
+	font-family: 'Proxima Nova Light';
+	width: 107px;
+	height: 55px;
+	background-color: #3E3E40;
+	color: #9fa0a3;
+	z-index: 1002;
+	border-radius: 3px;
+	-webkit-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+	display: none;
+}
+
+#block-hover {
+	position: absolute;
+	top: 30px;
+	left: 1340px;
+  	margin-left: auto;
+  	margin-right: auto;
+	background-color: #1C1C1F`;
+	width: 107px;
+	height: 25px;
+}
+
+#dropdown-menu:after {
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: 0 10px 10px;
+	border-color: #3E3E40 transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	top: -10px;
+	left: 43px;
+}
+
+#dropdown-profile, #dropdown-settings {
+	width: 100%;
+	height: 50%;
+	margin: 0;
+	text-align: center;
+	box-sizing: border-box;
+	padding-top: 5.5px;
+}
+
+#dropdown-profile {
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}
+
+#dropdown-settings {
+	border-bottom-left-radius: 3px;
+	border-bottom-right-radius: 3px;
+}
+
+#dropdown-profile a, #dropdown-settings a {
+	text-decoration: none;
+	color: #9fa0a3;
+}
+
+#dropdown-profile:hover, #dropdown-settings:hover {
+	background-color: #2E2F33;
+}
+
+#dropdown-profile:hover a, #dropdown-settings:hover a {
+	color: #DFE0E6;
 }

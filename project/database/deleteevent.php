@@ -10,7 +10,8 @@
 		$stmt = $db->prepare('SELECT * FROM Events WHERE eventID = ?');
 		$stmt->execute(array($event_id));
 		$result = $stmt->fetch();
-		unlink($result['banner']);
+		if ($result["banner"] != "images/uploads/eventBanner.png")
+			unlink("../" . $result["banner"]);
 
 		$stmt = $db->prepare('DELETE FROM Events WHERE eventID = ?');
 		$stmt->execute(array($event_id));

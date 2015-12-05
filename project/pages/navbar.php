@@ -6,6 +6,12 @@
 		<a id="logout-button" href="database/logout.php"><img  src="images/logout.png" alt="Logout" height="15" width="15" title="Logout"></a>
 		<a id="username" href="#"><img src="images/user.png" alt="Logout" height="15" width="15"> <?= $_SESSION['username'] ?></a>
 		<div id="add-event-button"><img src="images/addEvent.png" alt="Logout" height="13" width="13"> Add event</div>
+
+		<div id="block-hover"></div>
+		<div id="dropdown-menu">
+  			<div id="dropdown-profile"><a href="index.php?page=profile&userid=<?php echo $_SESSION['userID']?>">My profile</a></div>
+  			<div id="dropdown-settings"><a href="index.php?page=settings">Settings</a></div>
+  		</div>
   	</div>
 
   	<div id="dim"></div>

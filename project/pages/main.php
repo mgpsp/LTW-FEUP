@@ -1,5 +1,5 @@
-	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 	<?php include('navbar.php') ?>
@@ -10,7 +10,7 @@
   		<div class="line-divisor"></div>
 		<?php
 			include('database/upcomingevents.php');
-			$upcoming_events = getUserUpcomingEvents();
+			$upcoming_events = getUserUpcomingEvents($_SESSION['userID']);
 			if (empty($upcoming_events))
 				echo '<div class="no-upcoming-events">You have no upcoming events.</div>';
 			else

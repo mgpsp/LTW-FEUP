@@ -9,6 +9,7 @@
 
 		if (isset($event_id)) {
 			$event = getEventByID($event_id);
+			$host = getUsernameByID($event['host']);
 			if ($event != null) {
 				$event['going'] = isUserGoing($_SESSION['userID'], $event_id);
 	?>
@@ -21,11 +22,9 @@
 			<div id="going-label" style="visibility: visible;"><img src="images/goingLabel.png" height="120" width="120"></div>
 			<div id="event-hover">
 				<a title="Not going" href='database/notgoing.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="images/no.png" height="90" width="90"></a>
-				<?php if($_SESSION['username'] === $event['host']) {?>
+				<?php if($_SESSION['username'] === $host) {?>
 				<a title="Edit" id="edit-event" href="#"><img src="images/settings.png" width="100" height="100"></a>
 				<script type="text/javascript" src="scripts/editevent.js"></script>
-				<?php } else {?>
-				<div id="edit-event"></div>
 				<?php } ?>
 			</div>
 			<?php
@@ -34,7 +33,7 @@
 			<div id="going-label" style="visibility: hidden;"><img src="images/goingLabel.png" height="120" width="120"></div>
 			<div id="event-hover">
 				<a title="Going" href='database/going.php?eid=<?php echo $event['eventID'] ?>&uid=<?php echo $_SESSION['userID'] ?>'><img src="images/yes.png" height="100" width="100"></a>
-				<?php if($_SESSION['username'] === $event['host']) {?>
+				<?php if($_SESSION['username'] === $host) {?>
 				<a title="Edit" id="edit-event" href="#"><img src="images/settings.png" width="100" height="100"></a>
 				<script type="text/javascript" src="scripts/editevent.js"></script>
 				<?php } ?>
@@ -51,7 +50,9 @@
 					foreach ($goings as $going) {
 						$user = getUserByID($going['userID']);
 			?>
+				<a href="index.php?page=profile&userid=<?php echo $user['userID'] ?>">
 				<div class="going-avatar" style="background: url('<?php echo $user['avatar'] ?>') 50% 50% no-repeat; background-size: cover;" title="<?php echo $user['username'] ?>"></div>
+				</a>
 			<?php } }?>
 			</div>
 			<div class="line-divisor"></div>
@@ -69,7 +70,7 @@
 					<?php } else { ?>
 						<img src="images/public.png" height="12" width="12" title="Public">
 					<?php } ?>
-					Hosted by <?php echo $event['host']?>
+					Hosted by <?php echo $host?>
 				</li>
 				<li><img src="images/clock.png" height="12" width="12" title="Date"> <?php echo date("l, F jS \a\\t H:i", strtotime($event['eventDate']))?></li>
 				<li><img src="images/location.png" height="12" width="12" title="Location"> <?php echo $event['location']?></li>
@@ -80,7 +81,7 @@
 
 		<?php
 			$can_comment = false;
-			if (isUserGoing($_SESSION['userID'], $event_id) || $_SESSION['username'] == $event['host']) {
+			if (isUserGoing($_SESSION['userID'], $event_id) || $_SESSION['username'] == $host) {
 				$can_comment = true;
 		?>
 		<div id="post-comment-title">POST A NEW COMMENT</div>
@@ -101,14 +102,16 @@
 		<div id="no-comments">No comments to show.</div>
 		<?php } } else
 			foreach ($comments as $comment) {
-				$avatar = getUserAvatarByUsername($comment['author']);
+				$author = getUserByID($comment['author']);
 		?>
 		<div class="comment-container">
-			<?php if ($_SESSION['username'] == $comment['author']) { ?>
-			<div class="delete-comment"><a href="database/deletecomment.php?id=<?php echo $comment['commentID']?>&author=<?php echo $comment['author']?>"><img title="Delete comment" src="images/delete.png" width="10" height="10"></a></div>
+			<?php if ($_SESSION['username'] == $author['username']) { ?>
+			<div class="delete-comment"><a href="database/deletecomment.php?id=<?php echo $comment['commentID']?>&author=<?php echo $author['username']?>"><img title="Delete comment" src="images/delete.png" width="10" height="10"></a></div>
 			<?php } ?>
-			<div class="user-avatar" style="background: url('<?php echo $avatar ?>') 50% 50% no-repeat; background-size: cover;"></div>
-			<div class="username"><?php echo $comment['author']?> <a class="comment-date"><?php echo $comment['commentDate']?></a></div>
+			<a href="index.php?page=profile&userid=<?php echo $author['userID'] ?>">
+			<div class="user-avatar" style="background: url('<?php echo $author['avatar'] ?>') 50% 50% no-repeat; background-size: cover;"></div>
+			</a>
+			<div class="username"><a href="index.php?page=profile&userid=<?php echo $author['userID'] ?>"><?php echo $author['username']?></a> <a class="comment-date"><?php echo $comment['commentDate']?></a></div>
 			<div class="comment"><?php echo $comment['content']?></div>
 		</div>
 		<?php } ?>
@@ -162,7 +165,7 @@
 	  		<input id="edit-button" type="button" value="Save" onclick="edit_event();">
 	  		<input id="cancel-button-edit" type="button" value="Cancel">
 	  	</form>
-	  	<a href="database/deleteevent.php?id=<?php echo $event['eventID']?>&host=<?php echo $event['host']?>">Delete event</a>
+	  	<a href="database/deleteevent.php?id=<?php echo $event['eventID']?>&host=<?php echo $host?>">Delete event</a>
   	</div>
 
   	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>

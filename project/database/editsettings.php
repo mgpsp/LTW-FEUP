@@ -30,4 +30,5 @@
 
 	$_SESSION['username'] = $username;
 	$_SESSION['avatar'] = $image;
+	$_SESSION['email'] = $email;
 ?>
