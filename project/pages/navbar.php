@@ -33,8 +33,8 @@
 	  	</div>
 	  	<form id="data-field" action="" method="post" enctype="multipart/form-data">
 	  		<ul>
-		  		<li><input id="name" type="text" required="required" placeholder="Add a short, clear name"></li>
-		  		<li><input id="location-add" type="text" required="required" placeholder="Include a place or address"></li>
+		  		<li><input id="name" type="text" required="required" placeholder="Add a short, clear name" maxlength="50"></li>
+		  		<li><input id="location-add" type="text" required="required" placeholder="Include a place or address" maxlength="70"></li>
 		  		<li>
 		  			<select id="type">
 		  				<option value="Academic">Academic</option>
@@ -52,7 +52,7 @@
 		  		</li>
 		  		<li><input id="date" type="date" required="required" value="<?php echo date('Y-m-d'); ?>" >
 		  		<input id="time" type="time" required="required" value="<?php echo date('H:i'); ?>"></li>
-		  		<li><textarea id="description" rows="4" cols="50" placeholder="Tell people more about the event"></textarea></li>
+		  		<li><textarea id="description" rows="4" cols="50" placeholder="Tell people more about the event" maxlength="3000"></textarea></li>
 		  		<li><input id="photo" type="file" name="photo" accept="image/*"></li>
 		  		<li><input id="private" type="checkbox"></li>
 	  		</ul>

@@ -3,6 +3,15 @@
 </head>
 <div id="container">
 <body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
 	<?php
 		include('navbar.php');
 		include('database/connection_external.php');
@@ -63,6 +72,8 @@
 				<div id="going-number"><?php echo count($goings) ?> going</div>
 			<?php } ?>
 		</div>
+
+		<div class="fb-share-button" data-href="//paginas.fe.up.pt/~up201305998/project/index.php?page=event&id=<?php echo $event_id ?>" data-layout="button"></div>
 
 		<div id="event-info">
 			<div id="event-type">
@@ -147,8 +158,8 @@
 	  	<form id="data-field-edit" action="" method="post" enctype="multipart/form-data">
 	  		<ul>
 	  			<input id="event-id" type="hidden" value="<?php echo $event['eventID']?>">
-		  		<li><input id="name-edit" type="text" required="required" placeholder="Add a short, clear name" value="<?php echo $event['name']?>"></li>
-		  		<li><input id="location-edit" type="text" required="required" placeholder="Include a place or address" value="<?php echo $event['location']?>"></li>
+		  		<li><input id="name-edit" type="text" required="required" placeholder="Add a short, clear name" maxlength="50" value="<?php echo $event['name']?>"></li>
+		  		<li><input id="location-edit" type="text" required="required" placeholder="Include a place or address" maxlength="70" value="<?php echo $event['location']?>"></li>
 		  		<li>
 		  			<select id="type-edit">
 		  				<?php
@@ -163,7 +174,7 @@
 		  		</li>
 		  		<li><input id="date-edit" type="date" required="required" value="<?php echo date("Y-m-d", strtotime($event['eventDate']))?>" >
 		  		<input id="time-edit" type="time" required="required" value="<?php echo date('H:i', strtotime($event['eventDate'])); ?>"></li>
-		  		<li><textarea id="description-edit" rows="4" cols="50" placeholder="Tell people more about the event"><?php echo $event['description']?></textarea></li>
+		  		<li><textarea id="description-edit" rows="4" cols="50" maxlength="3000" placeholder="Tell people more about the event"><?php echo $event['description']?></textarea></li>
 		  		<li><input id="photo-edit" type="file" name="photo-edit" accept="image/*"></li>
 		  		<?php if ($event['private']) {?>
 		  			<li><input id="private-edit" type="checkbox" value="" checked></li>

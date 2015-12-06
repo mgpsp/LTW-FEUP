@@ -52,3 +52,7 @@
 	font-size: 15px;
 	text-decoration: none;
 }
+
+.event-container:nth-last-child(-n+1) {
+	margin-bottom: 70px;
+}

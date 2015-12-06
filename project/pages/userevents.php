@@ -39,7 +39,7 @@
 		?>
 		<div class="event-container">
 			<div class="event-banner" style='background: url("<?php echo $event['banner']?>") 50% 50% no-repeat; background-size: cover;'>
-				<?php if ($event['going']) {?>
+				<?php if ($event['going'] && isset($userid)) {?>
 					<div class="going-label"><img src="images/goingLabel.png" height="50" width="50"></div>
 					<?php } ?>
 					<div class="event-hover">
