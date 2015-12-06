@@ -2,12 +2,14 @@
 	session_start();
 	include('pages/header.php');
 
-	if (!isset($_SESSION['username']))
-		$_SESSION['username'] = null;
-
 	$redirectTo = isset($_GET['page']) ? $_GET['page'] : 'signIn';
 
-	$loginRequired = array('main', 'event', 'search', 'userevents', 'settings');
+	$loginRequired = array('main', 'event', 'search', 'userevents', 'settings', 'profile', 'about');
+
+	if (!isset($_SESSION['username']))
+		$_SESSION['username'] = null;
+	else if ($redirectTo === 'signIn')
+		header("Location: index.php?page=main");
 
 	foreach ($loginRequired as $page) {
 		if ($redirectTo == $page && $_SESSION['username'] == null) {
@@ -46,6 +48,9 @@
 			if (isset($_GET['filter']))
 				$filter=$_GET['filter'];
 
+			if (isset($_GET['userid']))
+				$userid = $_GET['userid'];
+
 			include('pages/userevents.php');
 			break;
 		case 'settings':
@@ -56,8 +61,11 @@
 				$userid=$_GET['userid'];
 			include('pages/userprofile.php');
 			break;
+		case 'about':
+			include('pages/about.php');
+			break;
 		default:
-			include('pages/signin.php');
+			include('pages/notfound.php');
 			break;
 	}
 

@@ -1,15 +1,24 @@
 	<link rel="stylesheet" href="css/userprofile.css">
 	<link rel="stylesheet" href="css/navbar.css">
 </head>
+<div id="container">
 <body>
 	<?php 
 		include('navbar.php');
 		include('database/upcomingevents.php');
 
 		$username = getUsernamebyID($userid);
+		if ($username == "")
+			header("Location: index.php?page=notfound");
 		$avatar = getUserByUsername($username)['avatar'];
-		$upcomingevents = getUserUpcomingEvents($userid);
+		$userevents = getUserUpcomingEvents($userid);
 		$hosted_events = getEventsbyHost($userid);
+
+		$upcomingevents = array();
+		foreach ($userevents as $event) {
+			if (!$event["private"] || isUserGoing($_SESSION['userID'], $event['eventID']))
+				$upcomingevents[] = $event;
+		}
 	?>
 
 	<div id="user-info">
@@ -55,7 +64,8 @@
 		</div>
 
 		<div id="user-hosted-events">
-			<div id="hosted-events-title">Events hosted by <?php echo $username?></div>
+			<div><div id="title-right"><a href="index.php?page=userevents&filter=hosted&userid=<?php echo $userid ?>">SEE ALL</a></div>
+				<div id="hosted-events-title">Events hosted by <?php echo $username?></div></div>
 	  		<div class="linedivisor"></div>
 	  		<?php
 				if (empty($hosted_events)) {

@@ -11,12 +11,27 @@
 		$image = $_SESSION['avatar'];
 	}
 	else {
-		unlink('../$_SESSION["avatar"]');
-		$image_name = $_FILES["avatar"]["name"];
+		if ($_SESSION['avatar'] != "images/avatares/default.png");
+			unlink("../" . $_SESSION["avatar"]);
+		$image_name = uniqid() . "-" . $_FILES["avatar"]["name"];
 		$tmp_name = $_FILES["avatar"]["tmp_name"];
 		$image = "images/avatares/$image_name";
 	    move_uploaded_file($tmp_name, "$uploads_dir/$image_name");
 	}
+
+	if ($_SESSION['email'] != $email) {
+		$stmt = $db->prepare('SELECT * FROM Users WHERE email = ?');
+		$stmt->execute(array($email));
+		if ($stmt->fetch())
+			$email = $_SESSION['email'];
+	}
+
+	if ($_SESSION['username'] != $username) {
+		$stmt = $db->prepare('SELECT * FROM Users WHERE username = ?');
+		$stmt->execute(array($username));
+		if ($stmt->fetch())
+			$username = $_SESSION['username'];
+	}	
 
 	if ($password == "") {
 		$stmt = $db->prepare('UPDATE Users SET username = ?, email = ?, avatar = ? WHERE userID = ?');

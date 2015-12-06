@@ -18,6 +18,8 @@
 		$image = $result['banner'];
 	}
 	else {
+		if ($result["banner"] != "images/uploads/eventBanner.png")
+			unlink("../" . $result["banner"]);
 		$image_name = uniqid() . "-" . $_FILES["photo"]["name"];
 		$tmp_name = $_FILES["photo"]["tmp_name"];
 		$image = "images/uploads/$image_name";

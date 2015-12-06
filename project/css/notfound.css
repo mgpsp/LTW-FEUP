@@ -1,0 +1,38 @@
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('../fonts/ProximaNova-Light.otf');
+}
+
+html, body {
+	height: 100%;
+	font-family: 'Proxima Nova Light';
+	background-color: #121314;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#page-not-found {
+	color: #DFE0E6;
+	font-size: 170px;
+}
+
+#main-page{
+	color: #DFE0E6;
+	font-size: 50px;
+	text-decoration: none;
+}
+
+#main-page:hover{
+	text-decoration: underline;
+}

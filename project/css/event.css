@@ -85,6 +85,15 @@
 	background-color: #222326;
 }
 
+#event-info a{
+	text-decoration: none;
+	color: #DFE0E6;
+}
+
+#event-info a:hover{
+	text-decoration: underline;
+}
+
 #event-info ul {
 	padding: 0;
 	margin: 0;
@@ -134,7 +143,6 @@
 	padding-top: 4px;
 	width: 29.4%;
 	height: 150px;
-	/*background-color: #222326;*/
 }
 
 #going-info .line-divisor {
@@ -147,6 +155,14 @@
 	overflow-y: auto;
 	padding-left: 3px;
 	margin-bottom: 10px;
+	z-index: 50;
+}
+
+#no-goings {
+	width: 215px;
+	position: relative;
+	top: 27%;
+	left: 13%;
 }
 
 #going-number {
@@ -261,6 +277,10 @@
 	margin-bottom: 15px;
 }
 
+.comment-container:last-child {
+	margin-bottom: 75px;
+}
+
 .user-avatar {
 	width: 60px;
 	height: 60px;
@@ -312,7 +332,7 @@
 	font-family: 'Proxima Nova Light';
 	color: #DFE0E6;
 	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 110px;
 }
 
 #edit-event-form a {

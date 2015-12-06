@@ -1,6 +1,7 @@
 	<link rel="stylesheet" href="css/navbar.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
+<div id="container">
 <body>
 	<?php include('navbar.php') ?>
 

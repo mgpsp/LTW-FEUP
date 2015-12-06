@@ -2,15 +2,21 @@
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/navbar.css">
 </head>
+<div id="container">
 <body>
 	<?php
 		include('navbar.php');
 		include('database/connection_external.php');
 		include('database/upcomingevents.php');
+
+		$types = array("All", "Academic", "Arts", "Business", "Community", "Food & Drinks", "Music", "Politics", "Recreation", "Religion", "Sports", "Other");
 	?>
 
 	<div class="events-container">
-		<?php if (isset($type)) { ?>
+		<?php if (isset($type)) {
+			if (!in_array($type, $types)) {
+				header("Location: index.php?page=notfound");
+			}?>
 			<div><div id="past-events"><a href="index.php?page=search&type=<?php echo $type?>&filter=past">PAST EVENTS</a></div>
 			<div class="title">Type: <a href="index.php?page=search&type=<?php echo $type?>&filter=upcoming"><?php echo $type?></a></div></div>
 		<?php } else if (isset($val)) { ?>
@@ -22,15 +28,17 @@
 				if (isset($filter)) {
 					if ($filter === "past")
 						$events = getPastEventsByType($type);
-					else
+					else if ($filter == "upcoming")
 						$events = getUpcomingEventsByType($type);
+					else
+						header("Location: index.php?page=notfound");
 				}
 			}
 			else if (isset($val))
 				$events = searchEvents($val);
 
 			if (empty($events))
-				echo '<div class="no-events">No events found.';
+				echo '<div class="no-events">No events found.</div>';
 			else
 				foreach ($events as $event) {
 					$event['going'] = isUserGoing($_SESSION['userID'], $event['eventID']);
@@ -50,8 +58,8 @@
 			</div>
 			<div class="event-type"><img src="images/<?php echo $event['type']?>.png" height="19" width="19" title="<?php echo $event['type']?>"></div>
 			<div class="event-date"><?php echo strtoupper(date("D, j M H:i", strtotime($event['eventDate'])))?></div>
-			<div class="event-name"><a href="index.php?page=event&id=<?php echo $event['eventID'] ?>"><?php echo $event['name'] ?></a></div>
-			<div class="event-location"><?php echo $event['location'] ?></div>
+			<div class="event-name"><a title="<?php echo $event['name'] ?>" href="index.php?page=event&id=<?php echo $event['eventID'] ?>"><?php echo $event['name'] ?></a></div>
+			<div class="event-location" title="<?php echo $event['location'] ?>"><?php echo $event['location'] ?></div>
 		</div>
 		<?php } ?>
 	</div>

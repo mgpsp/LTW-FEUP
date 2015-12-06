@@ -1,6 +1,7 @@
 	<link rel="stylesheet" href="css/navbar.css">
 	<link rel="stylesheet" href="css/settings.css">
 </head>
+<div id="container">
 <body>
 	<?php
 		include('navbar.php');
@@ -17,7 +18,7 @@
 				</div>
 			</div>
 			<input id="change-username" type="text" maxlength="20" value="<?php echo $_SESSION['username']?>"><br>
-			<input id="change-email" type="text" maxlength="20" value="<?php echo $_SESSION['email']?>"><br>
+			<input id="change-email" type="text" maxlength="40" value="<?php echo $_SESSION['email']?>"><br>
 			<input id="change-password" type="password" maxlength="20" placeholder="New password" value=""><br>
 			<input id="save-button" type="button" value="Save" onclick="edit_settings();">
 		</form>

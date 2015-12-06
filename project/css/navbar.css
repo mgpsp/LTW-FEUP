@@ -165,7 +165,7 @@ html, body {
 	min-width: 610px;
 	max-width: 610px;
 	width: 32%;
-	height: 403px;
+	height: 410px;
 	box-shadow: 0px 0px 1px #888888;
 	z-index: 10000 !important;
 	border-radius: 2px;
@@ -179,13 +179,13 @@ html, body {
 }
 
 #add-event-form {
-	left: 34%;
+	left: 34.2%;
 	margin-top: 140px;
 }
 
 #edit-event-form {
-	left: 19%;
-	margin-top: 75px;
+	left: 34.2%;
+	margin-top: 140px;
 }
 
 #add-event-title, #edit-event-title {
@@ -223,7 +223,7 @@ html, body {
 }
 
 #field-name li:nth-last-child(2), #field-name-edit li:nth-last-child(2) {
-	padding-top: 49px;
+	padding-top: 55px;
 	padding-bottom: 12px;
 }
 
@@ -235,13 +235,18 @@ html, body {
 #name, #location-add, #date, #time, #description, #type, #name-edit, #location-edit, #date-edit, #time-edit, #description-edit, #type-edit {
 	padding-left: 7px;
 	font-family: 'Proxima Nova';
-	border: none;
 	border-radius: 2px;
+	border: 1px solid #F6F6F6;
 }
 
-#name, #location-add, #type, #name-edit, #location-edit, #type-edit {
+#name, #location-add, #name-edit, #location-edit, #type-edit {
 	height: 27px;
 	width: 380px;
+}
+
+#type {
+	height: 27px;
+	width: 390px;
 }
 
 #date, #date-edit {

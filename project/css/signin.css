@@ -3,6 +3,11 @@
   src: url('../fonts/ProximaNova-Regular.otf');
 }
 
+@font-face {
+  font-family: 'Rabbid Highway Sign II';
+  src: url('../fonts/RabbidHighwaySignII.otf');
+}
+
 html, body {
 	height: 110%;
 	font-family: 'Proxima Nova';
@@ -22,11 +27,6 @@ html {
 body {
     display: table-cell;
     vertical-align: middle;
-}
-
-@font-face {
-  font-family: 'Rabbid Highway Sign II';
-  src: url('../fonts/RabbidHighwaySignII.otf');
 }
 
 .sitename {

@@ -1,6 +1,7 @@
 	<link rel="stylesheet" href="css/event.css">
 	<link rel="stylesheet" href="css/navbar.css">
 </head>
+<div id="container">
 <body>
 	<?php
 		include('navbar.php');
@@ -9,6 +10,8 @@
 
 		if (isset($event_id)) {
 			$event = getEventByID($event_id);
+			if ($event == null)
+				header("Location: index.php?page=notfound");
 			$host = getUsernameByID($event['host']);
 			if ($event != null) {
 				$event['going'] = isUserGoing($_SESSION['userID'], $event_id);
@@ -53,10 +56,12 @@
 				<a href="index.php?page=profile&userid=<?php echo $user['userID'] ?>">
 				<div class="going-avatar" style="background: url('<?php echo $user['avatar'] ?>') 50% 50% no-repeat; background-size: cover;" title="<?php echo $user['username'] ?>"></div>
 				</a>
-			<?php } }?>
+			<?php } } else { echo '<div id="no-goings">Nobody is attending this event.</div>'; }?>
 			</div>
-			<div class="line-divisor"></div>
-			<div id="going-number"><?php echo count($goings) ?> going</div>
+			<?php if (count($goings) != 0) { ?>
+				<div class="line-divisor"></div>
+				<div id="going-number"><?php echo count($goings) ?> going</div>
+			<?php } ?>
 		</div>
 
 		<div id="event-info">
@@ -70,7 +75,7 @@
 					<?php } else { ?>
 						<img src="images/public.png" height="12" width="12" title="Public">
 					<?php } ?>
-					Hosted by <?php echo $host?>
+					Hosted by <a href="index.php?page=profile&userid=<?php echo $event['host'] ?>"><?php echo $host?></a>
 				</li>
 				<li><img src="images/clock.png" height="12" width="12" title="Date"> <?php echo date("l, F jS \a\\t H:i", strtotime($event['eventDate']))?></li>
 				<li><img src="images/location.png" height="12" width="12" title="Location"> <?php echo $event['location']?></li>
@@ -103,6 +108,9 @@
 		<?php } } else
 			foreach ($comments as $comment) {
 				$author = getUserByID($comment['author']);
+				$timeAgo = getTimeAgo($comment['commentDate']);
+				if ($timeAgo == "showDate")
+					$timeAgo = date("l, F jS \a\\t H:i:s", strtotime($comment['commentDate']));
 		?>
 		<div class="comment-container">
 			<?php if ($_SESSION['username'] == $author['username']) { ?>
@@ -111,7 +119,7 @@
 			<a href="index.php?page=profile&userid=<?php echo $author['userID'] ?>">
 			<div class="user-avatar" style="background: url('<?php echo $author['avatar'] ?>') 50% 50% no-repeat; background-size: cover;"></div>
 			</a>
-			<div class="username"><a href="index.php?page=profile&userid=<?php echo $author['userID'] ?>"><?php echo $author['username']?></a> <a class="comment-date"><?php echo $comment['commentDate']?></a></div>
+			<div class="username"><a href="index.php?page=profile&userid=<?php echo $author['userID'] ?>"><?php echo $author['username']?></a> <a title="<?php echo date("l, F jS \a\\t H:i:s", strtotime($comment['commentDate'])) ?>" class="comment-date"><?php echo $timeAgo ?></a></div>
 			<div class="comment"><?php echo $comment['content']?></div>
 		</div>
 		<?php } ?>
@@ -121,6 +129,7 @@
 	<?php } else {?>
 	<div id="not-found">Event not found.</div>
 	<?php } ?>
+	</div>
 
 	<div id="edit-event-form">
   		<div id="edit-event-title">Edit event</div><br><br>

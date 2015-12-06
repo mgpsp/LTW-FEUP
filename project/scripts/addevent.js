@@ -33,7 +33,7 @@ $(document).ready(function()
 		$('#dropdown-menu').fadeIn(200);
 	}, function() {
 		var hoverDrop = $('#dropdown-menu').is(":hover");
-		var hoveUser = $('#username').is(":hover");
+		var hoverUser = $('#username').is(":hover");
 		if (!hoverDrop && !hoverUser)
 			$('#dropdown-menu').fadeOut(200);
 	});
@@ -61,6 +61,24 @@ function create_event() {
 		privt = 1;
 	else
 		privt = 0;
+
+	var flag = 0;
+	if (name.value == "") {
+		flag = 1;
+		name.style.border = '1px solid red';
+	}
+	else
+		name.style.border = '1px solid #F6F6F6';
+
+	if (location_add.value == "") {
+		flag = 1;
+		location_add.style.border = '1px solid red';
+	}
+	else
+		location_add.style.border = '1px solid #F6F6F6';
+
+	if (flag)
+		return false;
 
 	var datetime = date.value + ' ' + time.value;
 
@@ -103,6 +121,24 @@ function edit_event() {
 		privt = 1;
 	else
 		privt = 0;
+
+	var flag = 0;
+	if (name.value == "") {
+		flag = 1;
+		name.style.border = '1px solid red';
+	}
+	else
+		name.style.border = '1px solid #F6F6F6';
+
+	if (location_edit.value == "") {
+		flag = 1;
+		location_edit.style.border = '1px solid red';
+	}
+	else
+		location_edit.style.border = '1px solid #F6F6F6';
+
+	if (flag)
+		return false;
 
 	var datetime = date.value + ' ' + time.value;
 

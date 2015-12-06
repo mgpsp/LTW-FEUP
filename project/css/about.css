@@ -1,0 +1,67 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url('../fonts/ProximaNova-Regular.otf');
+}
+
+@font-face {
+  font-family: 'Proxima Nova Light';
+  src: url('../fonts/ProximaNova-Light.otf');
+}
+
+#content {
+	width: 54%;
+	left: 23%;
+	color: #DFE0E6;
+	font-family: 'Proxima Nova Light';
+}
+
+#introduction {
+	margin-top: 90px;
+	text-align: center;
+	font-size: 32px;
+}
+
+#photos {
+	position: relative;
+	text-align: center;
+	left: 13%;
+}
+
+.name {
+	position: relative;
+	top: 115%;
+	font-family: 'Proxima Nova Light';
+	font-size: 24px;
+	left: 1%;
+	color: #DFE0E6;
+}
+
+#photo1, #photo2, #photo3 {
+	height: 220px;
+	width: 220px;
+	border-radius: 50%;
+	float: left;
+	margin-top: 110px;
+}
+
+#photo1 {
+	background: url('../images/chico.jpg') 50% 50% no-repeat;
+	background-size: cover;
+	margin-right: 55px;
+}
+
+#photo2 {
+	background: url('../images/marta.jpg') 50% 50% no-repeat;
+	background-size: cover;
+	margin-right: 55px;
+}
+
+#photo3 {
+	background: url('../images/miguel.jpg') 50% 50% no-repeat;
+	background-size: cover;
+}
+
+#names {
+	position: relative;
+	top: 50%;
+}
